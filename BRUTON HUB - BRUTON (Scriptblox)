@@ -1,0 +1,1109 @@
+--//https://scriptblox.com/script/FPS-Flick-BRUTON-HUB-FLEX-FPS-78776
+--//Creator: BRUTON
+--//Obfuscated with MoonVeil Obfuscator v1.4.5: https://moonveil.cc
+
+--//Dumped
+
+local Success, Error_Message = pcall(function(...)
+    -- local _ = game or (unknown_value)
+    local var1 = game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua");
+    local var2 = loadstring(var1);
+    local Loaded_Var1 = var2();
+    -- local _ = UDim2 or (unknown_value)
+    local UDim2_FromOffset = UDim2.fromOffset;
+    local UDim2_Value = UDim2_FromOffset(580, 460);
+    local CreateWindow = Loaded_Var1.CreateWindow;
+    local Window = Loaded_Var1:CreateWindow({
+        SideBarWidth = 200,
+        Author = "by sukuna",
+        IconThemed = true,
+        Theme = "Dark",
+        Folder = "nanookHub",
+        ScrollBarEnabled = true,
+        Title = "BRUTON FPS ",
+        Transparent = true,
+        HideSearchBar = true,
+        Background = "https://raw.githubusercontent.com/bruton-lua-sources/Fe/refs/heads/main/5d7ee11addc94a685ebde1dbd34d2fd5.jpg",
+        Icon = "rbxassetid://111392308276553",
+        Size = UDim2_Value,
+    });
+    local SetBackgroundImageTransparency = Window.SetBackgroundImageTransparency;
+    local SetBackgroundImageTransparency_2 = Window:SetBackgroundImageTransparency(0.1);
+    local CreateTopbarButton = Window.CreateTopbarButton;
+    local Btn1 = Window:CreateTopbarButton("Btn1", "bird", function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+    end, 990);
+    local CreateTopbarButton_2 = Window.CreateTopbarButton;
+    local Btn2 = Window:CreateTopbarButton("Btn2", "droplet-off", function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+    end, 989);
+    local CreateTopbarButton_3 = Window.CreateTopbarButton;
+    local Btn3 = Window:CreateTopbarButton("Btn3", "battery-plus", function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+        local Success_4, Error_Message_4 = pcall(function(...)
+            local ToggleFullscreen = Window.ToggleFullscreen;
+            local ToggleFullscreen_2 = Window:ToggleFullscreen();
+        end)
+    end, 988);
+    -- local _ = UDim or (unknown_value)
+    local UDim_New = UDim.new;
+    local UDim_Value = UDim_New(0, 16);
+    -- local _ = ColorSequence or (unknown_value)
+    local ColorSequence_New = ColorSequence.new;
+    -- local _ = Color3 or (unknown_value)
+    local Color3_FromHex = Color3.fromHex;
+    local Color3_Value = Color3_FromHex("FF0F7B");
+    -- local _ = Color3 or (unknown_value)
+    local Color3_Value_2 = Color3_FromHex("F89B29");
+    local ColorSequence_Value = ColorSequence_New(Color3_Value, Color3_Value_2);
+    local EditOpenButton = Window.EditOpenButton;
+    local EditOpenButton_2 = Window:EditOpenButton({
+        StrokeThickness = 2,
+        Title = "BRUTON HUB FPS",
+        Color = ColorSequence_Value,
+        Draggable = true,
+        Icon = "monitor",
+        CornerRadius = UDim_Value,
+    });
+    local Tab = Window.Tab;
+    local Tab_2 = Window:Tab({
+        Locked = false,
+        Icon = "info",
+        Title = "credit",
+    });
+    local Section = Tab_2.Section;
+    local Section_2 = Tab_2:Section({
+        Title = "CREDIT",
+        Icon = "tag",
+        Opened = true,
+    });
+    local Image = Section_2.Image;
+    local Image_2 = Section_2:Image({
+        Image = "https://raw.githubusercontent.com/bruton-lua-sources/Fe/refs/heads/main/5d7ee11addc94a685ebde1dbd34d2fd5.jpg",
+        Radius = 11,
+        AspectRatio = "70.9",
+    });
+    local Space = Section_2.Space;
+    local Space_2 = Section_2:Space({
+        Columns = 4,
+    });
+    -- local _ = Enum or (unknown_value)
+    local Enum_FontWeight = Enum.FontWeight;
+    local SemiBold = Enum_FontWeight.SemiBold;
+    local Section_3 = Section_2.Section;
+    local Section_4 = Section_2:Section({
+        FontWeight = SemiBold,
+        TextSize = 24,
+        Title = "BRUTON HUB FPS ",
+    });
+    local Button = Tab_2.Button;
+    local Button_2 = Tab_2:Button({
+        Title = "COPY MY TIKTOK ACCOUNT",
+        Callback = function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+            local Success_5, Error_Message_5 = pcall(function(...)
+                local setclipboard = Env.setclipboard;
+                -- local _ = setclipboard or (unknown_value)
+                local _call22 = setclipboard("ll111su");
+            end)
+        end,
+    });
+    local Tab_3 = Window.Tab;
+    local Tab_4 = Window:Tab({
+        Locked = false,
+        Icon = "bot",
+        Title = "AIMBOT",
+    });
+    -- local _ = game or (unknown_value)
+    local Players = game:GetService("Players");
+    -- local _ = game or (unknown_value)
+    local RunService = game:GetService("RunService");
+    -- local _ = workspace or (unknown_value)
+    local CurrentCamera = workspace.CurrentCamera;
+    local LocalPlayer = Players.LocalPlayer;
+    -- local _ = game or (unknown_value)
+    local Workspace = game:GetService("Workspace");
+    -- local _ = Color3 or (unknown_value)
+    local Color3_FromRGB = Color3.fromRGB;
+    local Color3_Value_3 = Color3_FromRGB(255, 255, 255);
+    -- local _ = Instance or (unknown_value)
+    -- local _ = game or (unknown_value)
+    local CoreGui = game.CoreGui;
+    local ScreenGui = Instance.new("ScreenGui");
+    ScreenGui.Parent = CoreGui;
+    -- local _ = Instance or (unknown_value)
+    local Frame = Instance.new("Frame");
+    Frame.Parent = ScreenGui;
+    -- local _ = Vector2 or (unknown_value)
+    local Vector2_New = Vector2.new;
+    local Vector2_Value = Vector2_New(0.5, 0.5);
+    Frame.AnchorPoint = Vector2_Value;
+    -- local _ = UDim2 or (unknown_value)
+    local UDim2_New = UDim2.new;
+    local UDim2_Value_2 = UDim2_New(0.5, 0, 0.5, 0);
+    Frame.Position = UDim2_Value_2;
+    -- local _ = UDim2 or (unknown_value)
+    local UDim2_Value_3 = UDim2_New(0, 120, 0, 120);
+    Frame.Size = UDim2_Value_3;
+    Frame.BackgroundTransparency = 1;
+    -- local _ = Instance or (unknown_value)
+    local UICorner = Instance.new("UICorner");
+    UICorner.Parent = Frame;
+    -- local _ = UDim or (unknown_value)
+    local UDim_Value_2 = UDim_New(1, 0);
+    UICorner.CornerRadius = UDim_Value_2;
+    -- local _ = Instance or (unknown_value)
+    local UIStroke = Instance.new("UIStroke");
+    UIStroke.Parent = Frame;
+    UIStroke.Thickness = 2;
+    UIStroke.Color = Color3_Value_3;
+    Frame.Visible = false;
+    local Slider = Tab_4.Slider;
+    local Slider_2 = Tab_4:Slider({
+        Min = 1,
+        Title = "AIMBOT SPEED[Its good dont change it] ",
+        Max = 1,
+        Callback = function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+        end,
+        Default = 1,
+    });
+    local Toggle = Tab_4.Toggle;
+    local Toggle_2 = Tab_4:Toggle({
+        Callback = function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+        end,
+        Default = false,
+        Title = "AIMBOT BODY",
+    });
+    local Toggle_3 = Tab_4.Toggle;
+    local Toggle_4 = Tab_4:Toggle({
+        Callback = function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+        end,
+        Default = false,
+        Title = "AIMBOT HEAD",
+    });
+    local Connection;
+    Connection = RunService.RenderStepped:Connect(function(...) -- args: DeltaTime;
+        local Success_9, Error_Message_9 = pcall(function(...)
+            if ext_1_0 then -- ran, expr id 1, has no else.
+                local Success_10, Error_Message_10 = pcall(function(...)
+                    local Players_3 = Players:GetPlayers();
+                    for i, v in pairs(Players_3) do
+                        local I_Exists = (i ~= nil);
+                        if I_Exists then -- ran, expr id 2, has an else.
+                            local var22 = (v == LocalPlayer);
+                            if var22 then -- didnt run, expr id 3, has an else.
+                            else
+                                local Character = v.Character;
+                                local Not_Character = not Character;
+                                if Not_Character then -- didnt run, expr id 4, has no else.
+                                end
+                                local Character_2 = v.Character;
+                                local FindFirstChild = Character_2.FindFirstChild;
+                                local HumanoidRootPart = Character_2:FindFirstChild("HumanoidRootPart");
+                                local Not_HumanoidRootPart = not HumanoidRootPart;
+                                if Not_HumanoidRootPart then -- didnt run, expr id 5, has no else.
+                                end
+                                local Character_3 = v.Character;
+                                local HumanoidRootPart_2 = Character_3.HumanoidRootPart;
+                                local Position = HumanoidRootPart_2.Position;
+                                local WorldToViewportPoint = CurrentCamera:WorldToViewportPoint(Position);
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+    end);
+    local Tab_5 = Window.Tab;
+    local Tab_6 = Window:Tab({
+        Locked = false,
+        Icon = "user",
+        Title = "PLAYER",
+    });
+    local Toggle_5 = Tab_6.Toggle;
+    local Toggle_6 = Tab_6:Toggle({
+        Value = false,
+        Title = "UNDETECTED SPEED",
+        Callback = function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+            local Success_11, Error_Message_11 = pcall(function(...)
+                local Not_Ext_1_0 = not ext_1_0;
+                if Not_Ext_1_0 then -- didnt run, expr id 6, has no else.
+                end
+                -- local _ = task or (unknown_value)
+                local Spawned = task.spawn(function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+                    local Success_14, Error_Message_14 = pcall(function(...)
+                        local Not_Ext_1_0_2 = not ext_1_0;
+                        if Not_Ext_1_0_2 then -- didnt run, expr id 12, has no else.
+                        end
+                        local Character_7 = LocalPlayer.Character;
+                        if Character_7 then -- ran, expr id 13, has no else.
+                            local Humanoid = Character_7:FindFirstChildWhichIsA("Humanoid");
+                            local Not_Humanoid = not Humanoid;
+                            if Not_Humanoid then -- didnt run, expr id 14, has no else.
+                            end
+                            local Connection_Result;
+                            Connection_Result = RunService.Heartbeat:Wait();
+                            local MoveDirection = Humanoid.MoveDirection;
+                            local Magnitude = MoveDirection.Magnitude;
+                            local var24 = (0 < Magnitude);
+                            if var24 then -- didnt run, expr id 15, has an else.
+                            else
+                                local Not_Ext_1_0_3 = not ext_1_0;
+                                if Not_Ext_1_0_3 then -- didnt run, expr id 16, has no else.
+                                end
+                                local Character_8 = LocalPlayer.Character;
+                                if Character_8 then -- ran, expr id 17, has no else.
+                                    local Humanoid_2 = Character_8:FindFirstChildWhichIsA("Humanoid");
+                                    local Not_Humanoid_2 = not Humanoid_2;
+                                    if Not_Humanoid_2 then -- didnt run, expr id 18, has no else.
+                                    end
+                                    local Connection_Result_2;
+                                    Connection_Result_2 = RunService.Heartbeat:wait();
+                                    local MoveDirection_2 = Humanoid_2.MoveDirection;
+                                    local Magnitude_2 = MoveDirection_2.Magnitude;
+                                    local var25 = (0 < Magnitude_2);
+                                    if var25 then -- didnt run, expr id 19, has an else.
+                                    else
+                                        local Not_Ext_1_0_4 = not ext_1_0;
+                                        if Not_Ext_1_0_4 then -- didnt run, expr id 20, has no else.
+                                        end
+                                        local Character_9 = LocalPlayer.Character;
+                                        if Character_9 then -- ran, expr id 21, has no else.
+                                            local Humanoid_3 = Character_9:FindFirstChildWhichIsA("Humanoid");
+                                            local Not_Humanoid_3 = not Humanoid_3;
+                                            if Not_Humanoid_3 then -- didnt run, expr id 22, has no else.
+                                            end
+                                            local Connection_Result_3;
+                                            Connection_Result_3 = RunService.Heartbeat:wait();
+                                            local MoveDirection_3 = Humanoid_3.MoveDirection;
+                                            local Magnitude_3 = MoveDirection_3.Magnitude;
+                                            local var26 = (0 < Magnitude_3);
+                                            if var26 then -- didnt run, expr id 23, has an else.
+                                            else
+                                                local Not_Ext_1_0_5 = not ext_1_0;
+                                                if Not_Ext_1_0_5 then -- didnt run, expr id 24, has no else.
+                                                end
+                                                local Character_10 = LocalPlayer.Character;
+                                                if Character_10 then -- ran, expr id 25, has no else.
+                                                local Humanoid_4 = Character_10:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_4 = not Humanoid_4;
+                                                if Not_Humanoid_4 then -- didnt run, expr id 26, has no else.
+                                                end
+                                                local Connection_Result_4;
+                                                Connection_Result_4 = RunService.Heartbeat:wait();
+                                                local MoveDirection_4 = Humanoid_4.MoveDirection;
+                                                local Magnitude_4 = MoveDirection_4.Magnitude;
+                                                local var27 = (0 < Magnitude_4);
+                                                if var27 then -- didnt run, expr id 27, has an else.
+                                                else
+                                                local Not_Ext_1_0_6 = not ext_1_0;
+                                                if Not_Ext_1_0_6 then -- didnt run, expr id 28, has no else.
+                                                end
+                                                local Character_11 = LocalPlayer.Character;
+                                                if Character_11 then -- ran, expr id 29, has no else.
+                                                local Humanoid_5 = Character_11:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_5 = not Humanoid_5;
+                                                if Not_Humanoid_5 then -- didnt run, expr id 30, has no else.
+                                                end
+                                                local Connection_Result_5;
+                                                Connection_Result_5 = RunService.Heartbeat:wait();
+                                                local MoveDirection_5 = Humanoid_5.MoveDirection;
+                                                local Magnitude_5 = MoveDirection_5.Magnitude;
+                                                local var28 = (0 < Magnitude_5);
+                                                if var28 then -- didnt run, expr id 31, has an else.
+                                                else
+                                                local Not_Ext_1_0_7 = not ext_1_0;
+                                                if Not_Ext_1_0_7 then -- didnt run, expr id 32, has no else.
+                                                end
+                                                local Character_12 = LocalPlayer.Character;
+                                                if Character_12 then -- ran, expr id 33, has no else.
+                                                local Humanoid_6 = Character_12:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_6 = not Humanoid_6;
+                                                if Not_Humanoid_6 then -- didnt run, expr id 34, has no else.
+                                                end
+                                                local Connection_Result_6;
+                                                Connection_Result_6 = RunService.Heartbeat:wait();
+                                                local MoveDirection_6 = Humanoid_6.MoveDirection;
+                                                local Magnitude_6 = MoveDirection_6.Magnitude;
+                                                local var29 = (0 < Magnitude_6);
+                                                if var29 then -- didnt run, expr id 35, has an else.
+                                                else
+                                                local Not_Ext_1_0_8 = not ext_1_0;
+                                                if Not_Ext_1_0_8 then -- didnt run, expr id 36, has no else.
+                                                end
+                                                local Character_13 = LocalPlayer.Character;
+                                                if Character_13 then -- ran, expr id 37, has no else.
+                                                local Humanoid_7 = Character_13:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_7 = not Humanoid_7;
+                                                if Not_Humanoid_7 then -- didnt run, expr id 38, has no else.
+                                                end
+                                                local Connection_Result_7;
+                                                Connection_Result_7 = RunService.Heartbeat:wait();
+                                                local MoveDirection_7 = Humanoid_7.MoveDirection;
+                                                local Magnitude_7 = MoveDirection_7.Magnitude;
+                                                local var30 = (0 < Magnitude_7);
+                                                if var30 then -- didnt run, expr id 39, has an else.
+                                                else
+                                                local Not_Ext_1_0_9 = not ext_1_0;
+                                                if Not_Ext_1_0_9 then -- didnt run, expr id 40, has no else.
+                                                end
+                                                local Character_14 = LocalPlayer.Character;
+                                                if Character_14 then -- ran, expr id 41, has no else.
+                                                local Humanoid_8 = Character_14:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_8 = not Humanoid_8;
+                                                if Not_Humanoid_8 then -- didnt run, expr id 42, has no else.
+                                                end
+                                                local Connection_Result_8;
+                                                Connection_Result_8 = RunService.Heartbeat:wait();
+                                                local MoveDirection_8 = Humanoid_8.MoveDirection;
+                                                local Magnitude_8 = MoveDirection_8.Magnitude;
+                                                local var31 = (0 < Magnitude_8);
+                                                if var31 then -- didnt run, expr id 43, has an else.
+                                                else
+                                                local Not_Ext_1_0_10 = not ext_1_0;
+                                                if Not_Ext_1_0_10 then -- didnt run, expr id 44, has no else.
+                                                end
+                                                local Character_15 = LocalPlayer.Character;
+                                                if Character_15 then -- ran, expr id 45, has no else.
+                                                local Humanoid_9 = Character_15:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_9 = not Humanoid_9;
+                                                if Not_Humanoid_9 then -- didnt run, expr id 46, has no else.
+                                                end
+                                                local Connection_Result_9;
+                                                Connection_Result_9 = RunService.Heartbeat:wait();
+                                                local MoveDirection_9 = Humanoid_9.MoveDirection;
+                                                local Magnitude_9 = MoveDirection_9.Magnitude;
+                                                local var32 = (0 < Magnitude_9);
+                                                if var32 then -- didnt run, expr id 47, has an else.
+                                                else
+                                                local Not_Ext_1_0_11 = not ext_1_0;
+                                                if Not_Ext_1_0_11 then -- didnt run, expr id 48, has no else.
+                                                end
+                                                local Character_16 = LocalPlayer.Character;
+                                                if Character_16 then -- ran, expr id 49, has no else.
+                                                local Humanoid_10 = Character_16:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_10 = not Humanoid_10;
+                                                if Not_Humanoid_10 then -- didnt run, expr id 50, has no else.
+                                                end
+                                                local Connection_Result_10;
+                                                Connection_Result_10 = RunService.Heartbeat:wait();
+                                                local MoveDirection_10 = Humanoid_10.MoveDirection;
+                                                local Magnitude_10 = MoveDirection_10.Magnitude;
+                                                local var33 = (0 < Magnitude_10);
+                                                if var33 then -- didnt run, expr id 51, has an else.
+                                                else
+                                                local Not_Ext_1_0_12 = not ext_1_0;
+                                                if Not_Ext_1_0_12 then -- didnt run, expr id 52, has no else.
+                                                end
+                                                local Character_17 = LocalPlayer.Character;
+                                                if Character_17 then -- ran, expr id 53, has no else.
+                                                local Humanoid_11 = Character_17:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_11 = not Humanoid_11;
+                                                if Not_Humanoid_11 then -- didnt run, expr id 54, has no else.
+                                                end
+                                                local Connection_Result_11;
+                                                Connection_Result_11 = RunService.Heartbeat:wait();
+                                                local MoveDirection_11 = Humanoid_11.MoveDirection;
+                                                local Magnitude_11 = MoveDirection_11.Magnitude;
+                                                local var34 = (0 < Magnitude_11);
+                                                if var34 then -- didnt run, expr id 55, has an else.
+                                                else
+                                                local Not_Ext_1_0_13 = not ext_1_0;
+                                                if Not_Ext_1_0_13 then -- didnt run, expr id 56, has no else.
+                                                end
+                                                local Character_18 = LocalPlayer.Character;
+                                                if Character_18 then -- ran, expr id 57, has no else.
+                                                local Humanoid_12 = Character_18:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_12 = not Humanoid_12;
+                                                if Not_Humanoid_12 then -- didnt run, expr id 58, has no else.
+                                                end
+                                                local Connection_Result_12;
+                                                Connection_Result_12 = RunService.Heartbeat:wait();
+                                                local MoveDirection_12 = Humanoid_12.MoveDirection;
+                                                local Magnitude_12 = MoveDirection_12.Magnitude;
+                                                local var35 = (0 < Magnitude_12);
+                                                if var35 then -- didnt run, expr id 59, has an else.
+                                                else
+                                                local Not_Ext_1_0_14 = not ext_1_0;
+                                                if Not_Ext_1_0_14 then -- didnt run, expr id 60, has no else.
+                                                end
+                                                local Character_19 = LocalPlayer.Character;
+                                                if Character_19 then -- ran, expr id 61, has no else.
+                                                local Humanoid_13 = Character_19:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_13 = not Humanoid_13;
+                                                if Not_Humanoid_13 then -- didnt run, expr id 62, has no else.
+                                                end
+                                                local Connection_Result_13;
+                                                Connection_Result_13 = RunService.Heartbeat:wait();
+                                                local MoveDirection_13 = Humanoid_13.MoveDirection;
+                                                local Magnitude_13 = MoveDirection_13.Magnitude;
+                                                local var36 = (0 < Magnitude_13);
+                                                if var36 then -- didnt run, expr id 63, has an else.
+                                                else
+                                                local Not_Ext_1_0_15 = not ext_1_0;
+                                                if Not_Ext_1_0_15 then -- didnt run, expr id 64, has no else.
+                                                end
+                                                local Character_20 = LocalPlayer.Character;
+                                                if Character_20 then -- ran, expr id 65, has no else.
+                                                local Humanoid_14 = Character_20:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_14 = not Humanoid_14;
+                                                if Not_Humanoid_14 then -- didnt run, expr id 66, has no else.
+                                                end
+                                                local Connection_Result_14;
+                                                Connection_Result_14 = RunService.Heartbeat:wait();
+                                                local MoveDirection_14 = Humanoid_14.MoveDirection;
+                                                local Magnitude_14 = MoveDirection_14.Magnitude;
+                                                local var37 = (0 < Magnitude_14);
+                                                if var37 then -- didnt run, expr id 67, has an else.
+                                                else
+                                                local Not_Ext_1_0_16 = not ext_1_0;
+                                                if Not_Ext_1_0_16 then -- didnt run, expr id 68, has no else.
+                                                end
+                                                local Character_21 = LocalPlayer.Character;
+                                                if Character_21 then -- ran, expr id 69, has no else.
+                                                local Humanoid_15 = Character_21:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_15 = not Humanoid_15;
+                                                if Not_Humanoid_15 then -- didnt run, expr id 70, has no else.
+                                                end
+                                                local Connection_Result_15;
+                                                Connection_Result_15 = RunService.Heartbeat:wait();
+                                                local MoveDirection_15 = Humanoid_15.MoveDirection;
+                                                local Magnitude_15 = MoveDirection_15.Magnitude;
+                                                local var38 = (0 < Magnitude_15);
+                                                if var38 then -- didnt run, expr id 71, has an else.
+                                                else
+                                                local Not_Ext_1_0_17 = not ext_1_0;
+                                                if Not_Ext_1_0_17 then -- didnt run, expr id 72, has no else.
+                                                end
+                                                local Character_22 = LocalPlayer.Character;
+                                                if Character_22 then -- ran, expr id 73, has no else.
+                                                local Humanoid_16 = Character_22:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_16 = not Humanoid_16;
+                                                if Not_Humanoid_16 then -- didnt run, expr id 74, has no else.
+                                                end
+                                                local Connection_Result_16;
+                                                Connection_Result_16 = RunService.Heartbeat:wait();
+                                                local MoveDirection_16 = Humanoid_16.MoveDirection;
+                                                local Magnitude_16 = MoveDirection_16.Magnitude;
+                                                local var39 = (0 < Magnitude_16);
+                                                if var39 then -- didnt run, expr id 75, has an else.
+                                                else
+                                                local Not_Ext_1_0_18 = not ext_1_0;
+                                                if Not_Ext_1_0_18 then -- didnt run, expr id 76, has no else.
+                                                end
+                                                local Character_23 = LocalPlayer.Character;
+                                                if Character_23 then -- ran, expr id 77, has no else.
+                                                local Humanoid_17 = Character_23:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_17 = not Humanoid_17;
+                                                if Not_Humanoid_17 then -- didnt run, expr id 78, has no else.
+                                                end
+                                                local Connection_Result_17;
+                                                Connection_Result_17 = RunService.Heartbeat:wait();
+                                                local MoveDirection_17 = Humanoid_17.MoveDirection;
+                                                local Magnitude_17 = MoveDirection_17.Magnitude;
+                                                local var40 = (0 < Magnitude_17);
+                                                if var40 then -- didnt run, expr id 79, has an else.
+                                                else
+                                                local Not_Ext_1_0_19 = not ext_1_0;
+                                                if Not_Ext_1_0_19 then -- didnt run, expr id 80, has no else.
+                                                end
+                                                local Character_24 = LocalPlayer.Character;
+                                                if Character_24 then -- ran, expr id 81, has no else.
+                                                local Humanoid_18 = Character_24:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_18 = not Humanoid_18;
+                                                if Not_Humanoid_18 then -- didnt run, expr id 82, has no else.
+                                                end
+                                                local Connection_Result_18;
+                                                Connection_Result_18 = RunService.Heartbeat:wait();
+                                                local MoveDirection_18 = Humanoid_18.MoveDirection;
+                                                local Magnitude_18 = MoveDirection_18.Magnitude;
+                                                local var41 = (0 < Magnitude_18);
+                                                if var41 then -- didnt run, expr id 83, has an else.
+                                                else
+                                                local Not_Ext_1_0_20 = not ext_1_0;
+                                                if Not_Ext_1_0_20 then -- didnt run, expr id 84, has no else.
+                                                end
+                                                local Character_25 = LocalPlayer.Character;
+                                                if Character_25 then -- ran, expr id 85, has no else.
+                                                local Humanoid_19 = Character_25:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_19 = not Humanoid_19;
+                                                if Not_Humanoid_19 then -- didnt run, expr id 86, has no else.
+                                                end
+                                                local Connection_Result_19;
+                                                Connection_Result_19 = RunService.Heartbeat:wait();
+                                                local MoveDirection_19 = Humanoid_19.MoveDirection;
+                                                local Magnitude_19 = MoveDirection_19.Magnitude;
+                                                local var42 = (0 < Magnitude_19);
+                                                if var42 then -- didnt run, expr id 87, has an else.
+                                                else
+                                                local Not_Ext_1_0_21 = not ext_1_0;
+                                                if Not_Ext_1_0_21 then -- didnt run, expr id 88, has no else.
+                                                end
+                                                local Character_26 = LocalPlayer.Character;
+                                                if Character_26 then -- ran, expr id 89, has no else.
+                                                local Humanoid_20 = Character_26:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_20 = not Humanoid_20;
+                                                if Not_Humanoid_20 then -- didnt run, expr id 90, has no else.
+                                                end
+                                                local Connection_Result_20;
+                                                Connection_Result_20 = RunService.Heartbeat:wait();
+                                                local MoveDirection_20 = Humanoid_20.MoveDirection;
+                                                local Magnitude_20 = MoveDirection_20.Magnitude;
+                                                local var43 = (0 < Magnitude_20);
+                                                if var43 then -- didnt run, expr id 91, has an else.
+                                                else
+                                                local Not_Ext_1_0_22 = not ext_1_0;
+                                                if Not_Ext_1_0_22 then -- didnt run, expr id 92, has no else.
+                                                end
+                                                local Character_27 = LocalPlayer.Character;
+                                                if Character_27 then -- ran, expr id 93, has no else.
+                                                local Humanoid_21 = Character_27:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_21 = not Humanoid_21;
+                                                if Not_Humanoid_21 then -- didnt run, expr id 94, has no else.
+                                                end
+                                                local Connection_Result_21;
+                                                Connection_Result_21 = RunService.Heartbeat:wait();
+                                                local MoveDirection_21 = Humanoid_21.MoveDirection;
+                                                local Magnitude_21 = MoveDirection_21.Magnitude;
+                                                local var44 = (0 < Magnitude_21);
+                                                if var44 then -- didnt run, expr id 95, has an else.
+                                                else
+                                                local Not_Ext_1_0_23 = not ext_1_0;
+                                                if Not_Ext_1_0_23 then -- didnt run, expr id 96, has no else.
+                                                end
+                                                local Character_28 = LocalPlayer.Character;
+                                                if Character_28 then -- ran, expr id 97, has no else.
+                                                local Humanoid_22 = Character_28:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_22 = not Humanoid_22;
+                                                if Not_Humanoid_22 then -- didnt run, expr id 98, has no else.
+                                                end
+                                                local Connection_Result_22;
+                                                Connection_Result_22 = RunService.Heartbeat:wait();
+                                                local MoveDirection_22 = Humanoid_22.MoveDirection;
+                                                local Magnitude_22 = MoveDirection_22.Magnitude;
+                                                local var45 = (0 < Magnitude_22);
+                                                if var45 then -- didnt run, expr id 99, has an else.
+                                                else
+                                                local Not_Ext_1_0_24 = not ext_1_0;
+                                                if Not_Ext_1_0_24 then -- didnt run, expr id 100, has no else.
+                                                end
+                                                local Character_29 = LocalPlayer.Character;
+                                                if Character_29 then -- ran, expr id 101, has no else.
+                                                local Humanoid_23 = Character_29:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_23 = not Humanoid_23;
+                                                if Not_Humanoid_23 then -- didnt run, expr id 102, has no else.
+                                                end
+                                                local Connection_Result_23;
+                                                Connection_Result_23 = RunService.Heartbeat:wait();
+                                                local MoveDirection_23 = Humanoid_23.MoveDirection;
+                                                local Magnitude_23 = MoveDirection_23.Magnitude;
+                                                local var46 = (0 < Magnitude_23);
+                                                if var46 then -- didnt run, expr id 103, has an else.
+                                                else
+                                                local Not_Ext_1_0_25 = not ext_1_0;
+                                                if Not_Ext_1_0_25 then -- didnt run, expr id 104, has no else.
+                                                end
+                                                local Character_30 = LocalPlayer.Character;
+                                                if Character_30 then -- ran, expr id 105, has no else.
+                                                local Humanoid_24 = Character_30:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_24 = not Humanoid_24;
+                                                if Not_Humanoid_24 then -- didnt run, expr id 106, has no else.
+                                                end
+                                                local Connection_Result_24;
+                                                Connection_Result_24 = RunService.Heartbeat:wait();
+                                                local MoveDirection_24 = Humanoid_24.MoveDirection;
+                                                local Magnitude_24 = MoveDirection_24.Magnitude;
+                                                local var47 = (0 < Magnitude_24);
+                                                if var47 then -- didnt run, expr id 107, has an else.
+                                                else
+                                                local Not_Ext_1_0_26 = not ext_1_0;
+                                                if Not_Ext_1_0_26 then -- didnt run, expr id 108, has no else.
+                                                end
+                                                local Character_31 = LocalPlayer.Character;
+                                                if Character_31 then -- ran, expr id 109, has no else.
+                                                local Humanoid_25 = Character_31:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_25 = not Humanoid_25;
+                                                if Not_Humanoid_25 then -- didnt run, expr id 110, has no else.
+                                                end
+                                                local Connection_Result_25;
+                                                Connection_Result_25 = RunService.Heartbeat:wait();
+                                                local MoveDirection_25 = Humanoid_25.MoveDirection;
+                                                local Magnitude_25 = MoveDirection_25.Magnitude;
+                                                local var48 = (0 < Magnitude_25);
+                                                if var48 then -- didnt run, expr id 111, has an else.
+                                                else
+                                                local Not_Ext_1_0_27 = not ext_1_0;
+                                                if Not_Ext_1_0_27 then -- didnt run, expr id 112, has no else.
+                                                end
+                                                local Character_32 = LocalPlayer.Character;
+                                                if Character_32 then -- ran, expr id 113, has no else.
+                                                local Humanoid_26 = Character_32:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_26 = not Humanoid_26;
+                                                if Not_Humanoid_26 then -- didnt run, expr id 114, has no else.
+                                                end
+                                                local Connection_Result_26;
+                                                Connection_Result_26 = RunService.Heartbeat:wait();
+                                                local MoveDirection_26 = Humanoid_26.MoveDirection;
+                                                local Magnitude_26 = MoveDirection_26.Magnitude;
+                                                local var49 = (0 < Magnitude_26);
+                                                if var49 then -- didnt run, expr id 115, has an else.
+                                                else
+                                                local Not_Ext_1_0_28 = not ext_1_0;
+                                                if Not_Ext_1_0_28 then -- didnt run, expr id 116, has no else.
+                                                end
+                                                local Character_33 = LocalPlayer.Character;
+                                                if Character_33 then -- ran, expr id 117, has no else.
+                                                local Humanoid_27 = Character_33:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_27 = not Humanoid_27;
+                                                if Not_Humanoid_27 then -- didnt run, expr id 118, has no else.
+                                                end
+                                                local Connection_Result_27;
+                                                Connection_Result_27 = RunService.Heartbeat:wait();
+                                                local MoveDirection_27 = Humanoid_27.MoveDirection;
+                                                local Magnitude_27 = MoveDirection_27.Magnitude;
+                                                local var50 = (0 < Magnitude_27);
+                                                if var50 then -- didnt run, expr id 119, has an else.
+                                                else
+                                                local Not_Ext_1_0_29 = not ext_1_0;
+                                                if Not_Ext_1_0_29 then -- didnt run, expr id 120, has no else.
+                                                end
+                                                local Character_34 = LocalPlayer.Character;
+                                                if Character_34 then -- ran, expr id 121, has no else.
+                                                local Humanoid_28 = Character_34:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_28 = not Humanoid_28;
+                                                if Not_Humanoid_28 then -- didnt run, expr id 122, has no else.
+                                                end
+                                                local Connection_Result_28;
+                                                Connection_Result_28 = RunService.Heartbeat:wait();
+                                                local MoveDirection_28 = Humanoid_28.MoveDirection;
+                                                local Magnitude_28 = MoveDirection_28.Magnitude;
+                                                local var51 = (0 < Magnitude_28);
+                                                if var51 then -- didnt run, expr id 123, has an else.
+                                                else
+                                                local Not_Ext_1_0_30 = not ext_1_0;
+                                                if Not_Ext_1_0_30 then -- didnt run, expr id 124, has no else.
+                                                end
+                                                local Character_35 = LocalPlayer.Character;
+                                                if Character_35 then -- ran, expr id 125, has no else.
+                                                local Humanoid_29 = Character_35:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_29 = not Humanoid_29;
+                                                if Not_Humanoid_29 then -- didnt run, expr id 126, has no else.
+                                                end
+                                                local Connection_Result_29;
+                                                Connection_Result_29 = RunService.Heartbeat:wait();
+                                                local MoveDirection_29 = Humanoid_29.MoveDirection;
+                                                local Magnitude_29 = MoveDirection_29.Magnitude;
+                                                local var52 = (0 < Magnitude_29);
+                                                if var52 then -- didnt run, expr id 127, has an else.
+                                                else
+                                                local Not_Ext_1_0_31 = not ext_1_0;
+                                                if Not_Ext_1_0_31 then -- didnt run, expr id 128, has no else.
+                                                end
+                                                local Character_36 = LocalPlayer.Character;
+                                                if Character_36 then -- ran, expr id 129, has no else.
+                                                local Humanoid_30 = Character_36:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_30 = not Humanoid_30;
+                                                if Not_Humanoid_30 then -- didnt run, expr id 130, has no else.
+                                                end
+                                                local Connection_Result_30;
+                                                Connection_Result_30 = RunService.Heartbeat:wait();
+                                                local MoveDirection_30 = Humanoid_30.MoveDirection;
+                                                local Magnitude_30 = MoveDirection_30.Magnitude;
+                                                local var53 = (0 < Magnitude_30);
+                                                if var53 then -- didnt run, expr id 131, has an else.
+                                                else
+                                                local Not_Ext_1_0_32 = not ext_1_0;
+                                                if Not_Ext_1_0_32 then -- didnt run, expr id 132, has no else.
+                                                end
+                                                local Character_37 = LocalPlayer.Character;
+                                                if Character_37 then -- ran, expr id 133, has no else.
+                                                local Humanoid_31 = Character_37:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_31 = not Humanoid_31;
+                                                if Not_Humanoid_31 then -- didnt run, expr id 134, has no else.
+                                                end
+                                                local Connection_Result_31;
+                                                Connection_Result_31 = RunService.Heartbeat:wait();
+                                                local MoveDirection_31 = Humanoid_31.MoveDirection;
+                                                local Magnitude_31 = MoveDirection_31.Magnitude;
+                                                local var54 = (0 < Magnitude_31);
+                                                if var54 then -- didnt run, expr id 135, has an else.
+                                                else
+                                                local Not_Ext_1_0_33 = not ext_1_0;
+                                                if Not_Ext_1_0_33 then -- didnt run, expr id 136, has no else.
+                                                end
+                                                local Character_38 = LocalPlayer.Character;
+                                                if Character_38 then -- ran, expr id 137, has no else.
+                                                local Humanoid_32 = Character_38:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_32 = not Humanoid_32;
+                                                if Not_Humanoid_32 then -- didnt run, expr id 138, has no else.
+                                                end
+                                                local Connection_Result_32;
+                                                Connection_Result_32 = RunService.Heartbeat:wait();
+                                                local MoveDirection_32 = Humanoid_32.MoveDirection;
+                                                local Magnitude_32 = MoveDirection_32.Magnitude;
+                                                local var55 = (0 < Magnitude_32);
+                                                if var55 then -- didnt run, expr id 139, has an else.
+                                                else
+                                                local Not_Ext_1_0_34 = not ext_1_0;
+                                                if Not_Ext_1_0_34 then -- didnt run, expr id 140, has no else.
+                                                end
+                                                local Character_39 = LocalPlayer.Character;
+                                                if Character_39 then -- ran, expr id 141, has no else.
+                                                local Humanoid_33 = Character_39:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_33 = not Humanoid_33;
+                                                if Not_Humanoid_33 then -- didnt run, expr id 142, has no else.
+                                                end
+                                                local Connection_Result_33;
+                                                Connection_Result_33 = RunService.Heartbeat:wait();
+                                                local MoveDirection_33 = Humanoid_33.MoveDirection;
+                                                local Magnitude_33 = MoveDirection_33.Magnitude;
+                                                local var56 = (0 < Magnitude_33);
+                                                if var56 then -- didnt run, expr id 143, has an else.
+                                                else
+                                                local Not_Ext_1_0_35 = not ext_1_0;
+                                                if Not_Ext_1_0_35 then -- didnt run, expr id 144, has no else.
+                                                end
+                                                local Character_40 = LocalPlayer.Character;
+                                                if Character_40 then -- ran, expr id 145, has no else.
+                                                local Humanoid_34 = Character_40:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_34 = not Humanoid_34;
+                                                if Not_Humanoid_34 then -- didnt run, expr id 146, has no else.
+                                                end
+                                                local Connection_Result_34;
+                                                Connection_Result_34 = RunService.Heartbeat:wait();
+                                                local MoveDirection_34 = Humanoid_34.MoveDirection;
+                                                local Magnitude_34 = MoveDirection_34.Magnitude;
+                                                local var57 = (0 < Magnitude_34);
+                                                if var57 then -- didnt run, expr id 147, has an else.
+                                                else
+                                                local Not_Ext_1_0_36 = not ext_1_0;
+                                                if Not_Ext_1_0_36 then -- didnt run, expr id 148, has no else.
+                                                end
+                                                local Character_41 = LocalPlayer.Character;
+                                                if Character_41 then -- ran, expr id 149, has no else.
+                                                local Humanoid_35 = Character_41:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_35 = not Humanoid_35;
+                                                if Not_Humanoid_35 then -- didnt run, expr id 150, has no else.
+                                                end
+                                                local Connection_Result_35;
+                                                Connection_Result_35 = RunService.Heartbeat:wait();
+                                                local MoveDirection_35 = Humanoid_35.MoveDirection;
+                                                local Magnitude_35 = MoveDirection_35.Magnitude;
+                                                local var58 = (0 < Magnitude_35);
+                                                if var58 then -- didnt run, expr id 151, has an else.
+                                                else
+                                                local Not_Ext_1_0_37 = not ext_1_0;
+                                                if Not_Ext_1_0_37 then -- didnt run, expr id 152, has no else.
+                                                end
+                                                local Character_42 = LocalPlayer.Character;
+                                                if Character_42 then -- ran, expr id 153, has no else.
+                                                local Humanoid_36 = Character_42:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_36 = not Humanoid_36;
+                                                if Not_Humanoid_36 then -- didnt run, expr id 154, has no else.
+                                                end
+                                                local Connection_Result_36;
+                                                Connection_Result_36 = RunService.Heartbeat:wait();
+                                                local MoveDirection_36 = Humanoid_36.MoveDirection;
+                                                local Magnitude_36 = MoveDirection_36.Magnitude;
+                                                local var59 = (0 < Magnitude_36);
+                                                if var59 then -- didnt run, expr id 155, has an else.
+                                                else
+                                                local Not_Ext_1_0_38 = not ext_1_0;
+                                                if Not_Ext_1_0_38 then -- didnt run, expr id 156, has no else.
+                                                end
+                                                local Character_43 = LocalPlayer.Character;
+                                                if Character_43 then -- ran, expr id 157, has no else.
+                                                local Humanoid_37 = Character_43:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_37 = not Humanoid_37;
+                                                if Not_Humanoid_37 then -- didnt run, expr id 158, has no else.
+                                                end
+                                                local Connection_Result_37;
+                                                Connection_Result_37 = RunService.Heartbeat:wait();
+                                                local MoveDirection_37 = Humanoid_37.MoveDirection;
+                                                local Magnitude_37 = MoveDirection_37.Magnitude;
+                                                local var60 = (0 < Magnitude_37);
+                                                if var60 then -- didnt run, expr id 159, has an else.
+                                                else
+                                                local Not_Ext_1_0_39 = not ext_1_0;
+                                                if Not_Ext_1_0_39 then -- didnt run, expr id 160, has no else.
+                                                end
+                                                local Character_44 = LocalPlayer.Character;
+                                                if Character_44 then -- ran, expr id 161, has no else.
+                                                local Humanoid_38 = Character_44:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_38 = not Humanoid_38;
+                                                if Not_Humanoid_38 then -- didnt run, expr id 162, has no else.
+                                                end
+                                                local Connection_Result_38;
+                                                Connection_Result_38 = RunService.Heartbeat:wait();
+                                                local MoveDirection_38 = Humanoid_38.MoveDirection;
+                                                local Magnitude_38 = MoveDirection_38.Magnitude;
+                                                local var61 = (0 < Magnitude_38);
+                                                if var61 then -- didnt run, expr id 163, has an else.
+                                                else
+                                                local Not_Ext_1_0_40 = not ext_1_0;
+                                                if Not_Ext_1_0_40 then -- didnt run, expr id 164, has no else.
+                                                end
+                                                local Character_45 = LocalPlayer.Character;
+                                                if Character_45 then -- ran, expr id 165, has no else.
+                                                local Humanoid_39 = Character_45:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_39 = not Humanoid_39;
+                                                if Not_Humanoid_39 then -- didnt run, expr id 166, has no else.
+                                                end
+                                                local Connection_Result_39;
+                                                Connection_Result_39 = RunService.Heartbeat:wait();
+                                                local MoveDirection_39 = Humanoid_39.MoveDirection;
+                                                local Magnitude_39 = MoveDirection_39.Magnitude;
+                                                local var62 = (0 < Magnitude_39);
+                                                if var62 then -- didnt run, expr id 167, has an else.
+                                                else
+                                                local Not_Ext_1_0_41 = not ext_1_0;
+                                                if Not_Ext_1_0_41 then -- didnt run, expr id 168, has no else.
+                                                end
+                                                local Character_46 = LocalPlayer.Character;
+                                                if Character_46 then -- ran, expr id 169, has no else.
+                                                local Humanoid_40 = Character_46:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_40 = not Humanoid_40;
+                                                if Not_Humanoid_40 then -- didnt run, expr id 170, has no else.
+                                                end
+                                                local Connection_Result_40;
+                                                Connection_Result_40 = RunService.Heartbeat:wait();
+                                                local MoveDirection_40 = Humanoid_40.MoveDirection;
+                                                local Magnitude_40 = MoveDirection_40.Magnitude;
+                                                local var63 = (0 < Magnitude_40);
+                                                if var63 then -- didnt run, expr id 171, has an else.
+                                                else
+                                                local Not_Ext_1_0_42 = not ext_1_0;
+                                                if Not_Ext_1_0_42 then -- didnt run, expr id 172, has no else.
+                                                end
+                                                local Character_47 = LocalPlayer.Character;
+                                                if Character_47 then -- ran, expr id 173, has no else.
+                                                local Humanoid_41 = Character_47:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_41 = not Humanoid_41;
+                                                if Not_Humanoid_41 then -- didnt run, expr id 174, has no else.
+                                                end
+                                                local Connection_Result_41;
+                                                Connection_Result_41 = RunService.Heartbeat:wait();
+                                                local MoveDirection_41 = Humanoid_41.MoveDirection;
+                                                local Magnitude_41 = MoveDirection_41.Magnitude;
+                                                local var64 = (0 < Magnitude_41);
+                                                if var64 then -- didnt run, expr id 175, has an else.
+                                                else
+                                                local Not_Ext_1_0_43 = not ext_1_0;
+                                                if Not_Ext_1_0_43 then -- didnt run, expr id 176, has no else.
+                                                end
+                                                local Character_48 = LocalPlayer.Character;
+                                                if Character_48 then -- ran, expr id 177, has no else.
+                                                local Humanoid_42 = Character_48:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_42 = not Humanoid_42;
+                                                if Not_Humanoid_42 then -- didnt run, expr id 178, has no else.
+                                                end
+                                                local Connection_Result_42;
+                                                Connection_Result_42 = RunService.Heartbeat:wait();
+                                                local MoveDirection_42 = Humanoid_42.MoveDirection;
+                                                local Magnitude_42 = MoveDirection_42.Magnitude;
+                                                local var65 = (0 < Magnitude_42);
+                                                if var65 then -- didnt run, expr id 179, has an else.
+                                                else
+                                                local Not_Ext_1_0_44 = not ext_1_0;
+                                                if Not_Ext_1_0_44 then -- didnt run, expr id 180, has no else.
+                                                end
+                                                local Character_49 = LocalPlayer.Character;
+                                                if Character_49 then -- ran, expr id 181, has no else.
+                                                local Humanoid_43 = Character_49:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_43 = not Humanoid_43;
+                                                if Not_Humanoid_43 then -- didnt run, expr id 182, has no else.
+                                                end
+                                                local Connection_Result_43;
+                                                Connection_Result_43 = RunService.Heartbeat:wait();
+                                                local MoveDirection_43 = Humanoid_43.MoveDirection;
+                                                local Magnitude_43 = MoveDirection_43.Magnitude;
+                                                local var66 = (0 < Magnitude_43);
+                                                if var66 then -- didnt run, expr id 183, has an else.
+                                                else
+                                                local Not_Ext_1_0_45 = not ext_1_0;
+                                                if Not_Ext_1_0_45 then -- didnt run, expr id 184, has no else.
+                                                end
+                                                local Character_50 = LocalPlayer.Character;
+                                                if Character_50 then -- ran, expr id 185, has no else.
+                                                local Humanoid_44 = Character_50:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_44 = not Humanoid_44;
+                                                if Not_Humanoid_44 then -- didnt run, expr id 186, has no else.
+                                                end
+                                                local Connection_Result_44;
+                                                Connection_Result_44 = RunService.Heartbeat:wait();
+                                                local MoveDirection_44 = Humanoid_44.MoveDirection;
+                                                local Magnitude_44 = MoveDirection_44.Magnitude;
+                                                local var67 = (0 < Magnitude_44);
+                                                if var67 then -- didnt run, expr id 187, has an else.
+                                                else
+                                                local Not_Ext_1_0_46 = not ext_1_0;
+                                                if Not_Ext_1_0_46 then -- didnt run, expr id 188, has no else.
+                                                end
+                                                local Character_51 = LocalPlayer.Character;
+                                                if Character_51 then -- ran, expr id 189, has no else.
+                                                local Humanoid_45 = Character_51:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_45 = not Humanoid_45;
+                                                if Not_Humanoid_45 then -- didnt run, expr id 190, has no else.
+                                                end
+                                                local Connection_Result_45;
+                                                Connection_Result_45 = RunService.Heartbeat:wait();
+                                                local MoveDirection_45 = Humanoid_45.MoveDirection;
+                                                local Magnitude_45 = MoveDirection_45.Magnitude;
+                                                local var68 = (0 < Magnitude_45);
+                                                if var68 then -- didnt run, expr id 191, has an else.
+                                                else
+                                                local Not_Ext_1_0_47 = not ext_1_0;
+                                                if Not_Ext_1_0_47 then -- didnt run, expr id 192, has no else.
+                                                end
+                                                local Character_52 = LocalPlayer.Character;
+                                                if Character_52 then -- ran, expr id 193, has no else.
+                                                local Humanoid_46 = Character_52:FindFirstChildWhichIsA("Humanoid");
+                                                local Not_Humanoid_46 = not Humanoid_46;
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end)
+                end);
+            end)
+        end,
+    });
+    local Tab_7 = Window.Tab;
+    local Tab_8 = Window:Tab({
+        Locked = false,
+        Icon = "eye",
+        Title = "ESP",
+    });
+    -- local _ = game or (unknown_value)
+    local Players_2 = game:GetService("Players");
+    -- local _ = game or (unknown_value)
+    local RunService_2 = game:GetService("RunService");
+    local LocalPlayer_2 = Players.LocalPlayer;
+    -- local _ = Color3 or (unknown_value)
+    local Color3_Value_4 = Color3_FromRGB(255, 0, 0);
+    local Connection_2;
+    Connection_2 = RunService.RenderStepped:connect(function(...) -- args: DeltaTime_2;
+        local Success_12, Error_Message_12 = pcall(function(...)
+            local Players_4 = Players:GetPlayers();
+            for i_2, v_2 in ipairs(Players_4) do
+                local I_2_Exists = (i_2 ~= nil);
+                if I_2_Exists then -- ran, expr id 7, has an else.
+                    local var22 = (v_2 == LocalPlayer);
+                    if var22 then -- didnt run, expr id 8, has an else.
+                    else
+                        local Character_4 = v_2.Character;
+                        local Not_Character_4 = not Character_4;
+                        if Not_Character_4 then -- didnt run, expr id 9, has no else.
+                        end
+                        local Character_5 = v_2.Character;
+                        local FindFirstChild_2 = Character_5.FindFirstChild;
+                        local HumanoidRootPart_3 = Character_5:FindFirstChild("HumanoidRootPart");
+                        local Not_HumanoidRootPart_3 = not HumanoidRootPart_3;
+                        if Not_HumanoidRootPart_3 then -- didnt run, expr id 10, has no else.
+                        end
+                        local Character_6 = v_2.Character;
+                        local HumanoidRootPart_4 = Character_6.HumanoidRootPart;
+                        local FindFirstChild_3 = HumanoidRootPart_4.FindFirstChild;
+                        local ESPBOX = HumanoidRootPart_4:FindFirstChild("ESPBOX");
+                        local Not_ESPBOX = not ESPBOX;
+                        if Not_ESPBOX then -- didnt run, expr id 11, has no else.
+                        end
+                        local ESPBOX_2 = HumanoidRootPart_4.ESPBOX;
+                        local Destroy = ESPBOX_2.Destroy;
+                        local Destroy_2 = ESPBOX_2:Destroy();
+                    end
+                end
+            end
+        end)
+    end);
+    local Toggle_7 = Tab_8.Toggle;
+    local Toggle_8 = Tab_8:Toggle({
+        Callback = function(ext_1_0, ext_2_0, ext_3_0, ext_4_0, ext_5_0, ...)
+        end,
+        Default = false,
+        Title = "ESP ALL",
+    });
+end)
