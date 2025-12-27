@@ -1,0 +1,1679 @@
+--//https://scriptblox.com/script/DUELS-Murderers-VS-Sheriffs-Auto-Shoot-and-hitbox-75436
+--//Creator: Coderk
+--//Obfuscated with WeAreDevsObfuscator: https://wearedevs.net/obfuscator
+
+--//Dumped:
+
+local Players = game:GetService("Players");
+local ReplicatedStorage = game:GetService("ReplicatedStorage");
+local RunService = game:GetService("RunService");
+local Workspace = game:GetService("Workspace");
+local UserInputService = game:GetService("UserInputService");
+local HttpService = game:GetService("HttpService");
+local TweenService = game:GetService("TweenService");
+local TeleportService = game:GetService("TeleportService");
+local MarketplaceService = game:GetService("MarketplaceService");
+local StarterGui = game:GetService("StarterGui");
+local LocalPlayer = Players.LocalPlayer;
+local Mouse = LocalPlayer:GetMouse();
+local var1 = game:HttpGet("https://sirius.menu/rayfield");
+local var2 = loadstring(var1);
+local Loaded_Var1 = var2();
+local CreateWindow = Loaded_Var1.CreateWindow;
+local Window = Loaded_Var1:CreateWindow({
+    LoadingTitle = "Murders Vs Sheriffs",
+    KeySettings = {
+        Subtitle = "Murders Vs Sheriffs Script",
+        Title = "Laith Scripts Key",
+        Key = {
+            "laith2025",
+        },
+        GrabKeyFromSite = false,
+        SaveKey = true,
+        FileName = "LaithKey",
+        Note = "Get the key from: t.me/p_51948",
+    },
+    Name = "Laith Scripts",
+    KeySystem = true,
+    LoadingSubtitle = "By: Laith Scripts",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "LaithScripts",
+        FileName = "MVSConfig",
+    },
+});
+local CreateTab = Window.CreateTab;
+local AimAssist = Window:CreateTab("AimAssist");
+_G.BlockClick = true;
+local CreateInput = AimAssist.CreateInput;
+local Input = AimAssist:CreateInput({
+    Name = "Aim Distance",
+    CurrentValue = "250",
+    PlaceholderText = "1 - 10000",
+    Callback = function(p1_0)
+        local var5 = tonumber(p1_0, nil);
+    end,
+    RemoveTextAfterFocusLost = false,
+});
+local CreateToggle = AimAssist.CreateToggle;
+local Toggle = AimAssist:CreateToggle({
+    CurrentValue = false,
+    Name = "Click Shoot",
+    Callback = function(p1_0, p2_0)
+        local G_BlockClick = _G.BlockClick;
+        _G.BlockClick = false;
+    end,
+});
+local CreateToggle_2 = AimAssist.CreateToggle;
+local Toggle_2 = AimAssist:CreateToggle({
+    CurrentValue = false,
+    Name = "Auto Shoot",
+    Callback = function(p1_0, p2_0)
+        local G_BlockClick_2 = _G.BlockClick;
+    end,
+});
+local Backpack = LocalPlayer.Backpack;
+local Backpack_2 = LocalPlayer.Backpack;
+local ChildRemoved = Backpack_2.ChildRemoved;
+local Connect = ChildRemoved.Connect;
+local Connected = ChildRemoved:Connect(function(p1_0, p2_0, p3_0, p4_0)
+    local IsA = p1_0.IsA;
+    local Tool = p1_0:IsA("Tool");
+end);
+local Backpack_3 = LocalPlayer.Backpack;
+local ChildAdded = Backpack_3.ChildAdded;
+local Connect_2 = ChildAdded.Connect;
+local Connected_2 = ChildAdded:Connect(function(p1_0, p2_0, p3_0, p4_0, p5_0, p6_0)
+    local IsA_2 = p1_0.IsA;
+    local Tool_2 = p1_0:IsA("Tool");
+    local FindFirstChild = p1_0.FindFirstChild;
+    local Fire = p1_0:FindFirstChild("fire");
+end);
+local Spawned = task.spawn(function(p1_0, p2_0, p3_0, p4_0)
+    local Waited_For = task.wait(0.1);
+    local Character = LocalPlayer.Character;
+    local Children = Character:GetChildren();
+    for i, v in ipairs(Children) do
+        local IsA_3 = v.IsA;
+        local Tool_3 = v:IsA("Tool");
+        local FindFirstChild_2 = v.FindFirstChild;
+        local Fire_2 = v:FindFirstChild("fire");
+        local Success_28, Error_Message_28 = pcall(function(...)
+            local Parent = v.Parent;
+            local IsDescendantOf = v.IsDescendantOf;
+            local IsDescendantOf_2 = v:IsDescendantOf(game);
+            local GetDescendants = v.GetDescendants;
+            local Descendants = v:GetDescendants();
+            for i_2, v_2 in ipairs(Descendants) do
+                local IsA_4 = v_2.IsA;
+                local Script = v_2:IsA("Script");
+                local Array = {};
+                local var10 = table.insert(Array, v_2);
+            end
+            local FindFirstChild_3 = v.FindFirstChild;
+            local Client = v:FindFirstChild("Client");
+            local Array_2 = Array;
+            local var11 = table.insert(Array_2, Client);
+            local FindFirstChild_4 = v.FindFirstChild;
+            local GunScript = v:FindFirstChild("GunScript");
+            local Array_3 = Array_2;
+            local var12 = table.insert(Array_3, GunScript);
+        end)
+        local Waited_For_2 = task.wait(0.1);
+        local Character_2 = LocalPlayer.Character;
+        local Children_2 = Character_2:GetChildren();
+        for i_3, v_3 in ipairs(Children_2) do
+            local IsA_5 = v_3.IsA;
+            local Tool_4 = v_3:IsA("Tool");
+            local FindFirstChild_5 = v_3.FindFirstChild;
+            local Fire_3 = v_3:FindFirstChild("fire");
+            local Success_29, Error_Message_29 = pcall(function(...)
+                local Parent_2 = v_3.Parent;
+                local IsDescendantOf_3 = v_3.IsDescendantOf;
+                local IsDescendantOf_4 = v_3:IsDescendantOf(game);
+                local GetDescendants_2 = v_3.GetDescendants;
+                local Descendants_2 = v_3:GetDescendants();
+                for i_4, v_4 in ipairs(Descendants_2) do
+                    local IsA_6 = v_4.IsA;
+                    local Script_2 = v_4:IsA("Script");
+                    local Array_4 = {};
+                    local var13 = table.insert(Array_4, v_4);
+                end
+                local FindFirstChild_6 = v_3.FindFirstChild;
+                local Client_2 = v_3:FindFirstChild("Client");
+                local Array_5 = Array_4;
+                local var14 = table.insert(Array_5, Client_2);
+                local FindFirstChild_7 = v_3.FindFirstChild;
+                local GunScript_2 = v_3:FindFirstChild("GunScript");
+                local Array_6 = Array_5;
+                local var15 = table.insert(Array_6, GunScript_2);
+            end)
+            local Waited_For_3 = task.wait(0.1);
+            local Character_3 = LocalPlayer.Character;
+            local Children_3 = Character_3:GetChildren();
+            for i_5, v_5 in ipairs(Children_3) do
+                local IsA_7 = v_5.IsA;
+                local Tool_5 = v_5:IsA("Tool");
+                local FindFirstChild_8 = v_5.FindFirstChild;
+                local Fire_4 = v_5:FindFirstChild("fire");
+                local Success_30, Error_Message_30 = pcall(function(...)
+                    local Parent_3 = v_5.Parent;
+                    local IsDescendantOf_5 = v_5.IsDescendantOf;
+                    local IsDescendantOf_6 = v_5:IsDescendantOf(game);
+                    local GetDescendants_3 = v_5.GetDescendants;
+                    local Descendants_3 = v_5:GetDescendants();
+                    for i_6, v_6 in ipairs(Descendants_3) do
+                        local IsA_8 = v_6.IsA;
+                        local Script_3 = v_6:IsA("Script");
+                        local Array_7 = {};
+                        local var16 = table.insert(Array_7, v_6);
+                    end
+                    local FindFirstChild_9 = v_5.FindFirstChild;
+                    local Client_3 = v_5:FindFirstChild("Client");
+                    local Array_8 = Array_7;
+                    local var17 = table.insert(Array_8, Client_3);
+                    local FindFirstChild_10 = v_5.FindFirstChild;
+                    local GunScript_3 = v_5:FindFirstChild("GunScript");
+                    local Array_9 = Array_8;
+                    local var18 = table.insert(Array_9, GunScript_3);
+                end)
+                local Waited_For_4 = task.wait(0.1);
+                local Character_4 = LocalPlayer.Character;
+                local Children_4 = Character_4:GetChildren();
+                for i_7, v_7 in ipairs(Children_4) do
+                    local IsA_9 = v_7.IsA;
+                    local Tool_6 = v_7:IsA("Tool");
+                    local FindFirstChild_11 = v_7.FindFirstChild;
+                    local Fire_5 = v_7:FindFirstChild("fire");
+                    local Success_31, Error_Message_31 = pcall(function(...)
+                        local Parent_4 = v_7.Parent;
+                        local IsDescendantOf_7 = v_7.IsDescendantOf;
+                        local IsDescendantOf_8 = v_7:IsDescendantOf(game);
+                        local GetDescendants_4 = v_7.GetDescendants;
+                        local Descendants_4 = v_7:GetDescendants();
+                        for i_8, v_8 in ipairs(Descendants_4) do
+                            local IsA_10 = v_8.IsA;
+                            local Script_4 = v_8:IsA("Script");
+                            local Array_10 = {};
+                            local var19 = table.insert(Array_10, v_8);
+                        end
+                        local FindFirstChild_12 = v_7.FindFirstChild;
+                        local Client_4 = v_7:FindFirstChild("Client");
+                        local Array_11 = Array_10;
+                        local var20 = table.insert(Array_11, Client_4);
+                        local FindFirstChild_13 = v_7.FindFirstChild;
+                        local GunScript_4 = v_7:FindFirstChild("GunScript");
+                        local Array_12 = Array_11;
+                        local var21 = table.insert(Array_12, GunScript_4);
+                    end)
+                    local Waited_For_5 = task.wait(0.1);
+                    local Character_5 = LocalPlayer.Character;
+                    local Children_5 = Character_5:GetChildren();
+                    for i_9, v_9 in ipairs(Children_5) do
+                        local IsA_11 = v_9.IsA;
+                        local Tool_7 = v_9:IsA("Tool");
+                        local FindFirstChild_14 = v_9.FindFirstChild;
+                        local Fire_6 = v_9:FindFirstChild("fire");
+                        local Success_32, Error_Message_32 = pcall(function(...)
+                            local Parent_5 = v_9.Parent;
+                            local IsDescendantOf_9 = v_9.IsDescendantOf;
+                            local IsDescendantOf_10 = v_9:IsDescendantOf(game);
+                            local GetDescendants_5 = v_9.GetDescendants;
+                            local Descendants_5 = v_9:GetDescendants();
+                            for i_10, v_10 in ipairs(Descendants_5) do
+                                local IsA_12 = v_10.IsA;
+                                local Script_5 = v_10:IsA("Script");
+                                local Array_13 = {};
+                                local var22 = table.insert(Array_13, v_10);
+                            end
+                            local FindFirstChild_15 = v_9.FindFirstChild;
+                            local Client_5 = v_9:FindFirstChild("Client");
+                            local Array_14 = Array_13;
+                            local var23 = table.insert(Array_14, Client_5);
+                            local FindFirstChild_16 = v_9.FindFirstChild;
+                            local GunScript_5 = v_9:FindFirstChild("GunScript");
+                            local Array_15 = Array_14;
+                            local var24 = table.insert(Array_15, GunScript_5);
+                        end)
+                        local Waited_For_6 = task.wait(0.1);
+                        local Character_6 = LocalPlayer.Character;
+                        local Children_6 = Character_6:GetChildren();
+                        for i_11, v_11 in ipairs(Children_6) do
+                            local IsA_13 = v_11.IsA;
+                            local Tool_8 = v_11:IsA("Tool");
+                            local FindFirstChild_17 = v_11.FindFirstChild;
+                            local Fire_7 = v_11:FindFirstChild("fire");
+                            local Success_33, Error_Message_33 = pcall(function(...)
+                                local Parent_6 = v_11.Parent;
+                                local IsDescendantOf_11 = v_11.IsDescendantOf;
+                                local IsDescendantOf_12 = v_11:IsDescendantOf(game);
+                                local GetDescendants_6 = v_11.GetDescendants;
+                                local Descendants_6 = v_11:GetDescendants();
+                                for i_12, v_12 in ipairs(Descendants_6) do
+                                    local IsA_14 = v_12.IsA;
+                                    local Script_6 = v_12:IsA("Script");
+                                    local Array_16 = {};
+                                    local var25 = table.insert(Array_16, v_12);
+                                end
+                                local FindFirstChild_18 = v_11.FindFirstChild;
+                                local Client_6 = v_11:FindFirstChild("Client");
+                                local Array_17 = Array_16;
+                                local var26 = table.insert(Array_17, Client_6);
+                                local FindFirstChild_19 = v_11.FindFirstChild;
+                                local GunScript_6 = v_11:FindFirstChild("GunScript");
+                                local Array_18 = Array_17;
+                                local var27 = table.insert(Array_18, GunScript_6);
+                            end)
+                            local Waited_For_7 = task.wait(0.1);
+                            local Character_7 = LocalPlayer.Character;
+                            local Children_7 = Character_7:GetChildren();
+                            for i_13, v_13 in ipairs(Children_7) do
+                                local IsA_15 = v_13.IsA;
+                                local Tool_9 = v_13:IsA("Tool");
+                                local FindFirstChild_20 = v_13.FindFirstChild;
+                                local Fire_8 = v_13:FindFirstChild("fire");
+                                local Success_34, Error_Message_34 = pcall(function(...)
+                                    local Parent_7 = v_13.Parent;
+                                    local IsDescendantOf_13 = v_13.IsDescendantOf;
+                                    local IsDescendantOf_14 = v_13:IsDescendantOf(game);
+                                    local GetDescendants_7 = v_13.GetDescendants;
+                                    local Descendants_7 = v_13:GetDescendants();
+                                    for i_14, v_14 in ipairs(Descendants_7) do
+                                        local IsA_16 = v_14.IsA;
+                                        local Script_7 = v_14:IsA("Script");
+                                        local Array_19 = {};
+                                        local var28 = table.insert(Array_19, v_14);
+                                    end
+                                    local FindFirstChild_21 = v_13.FindFirstChild;
+                                    local Client_7 = v_13:FindFirstChild("Client");
+                                    local Array_20 = Array_19;
+                                    local var29 = table.insert(Array_20, Client_7);
+                                    local FindFirstChild_22 = v_13.FindFirstChild;
+                                    local GunScript_7 = v_13:FindFirstChild("GunScript");
+                                    local Array_21 = Array_20;
+                                    local var30 = table.insert(Array_21, GunScript_7);
+                                end)
+                                local Waited_For_8 = task.wait(0.1);
+                                local Character_8 = LocalPlayer.Character;
+                                local Children_8 = Character_8:GetChildren();
+                                for i_15, v_15 in ipairs(Children_8) do
+                                    local IsA_17 = v_15.IsA;
+                                    local Tool_10 = v_15:IsA("Tool");
+                                    local FindFirstChild_23 = v_15.FindFirstChild;
+                                    local Fire_9 = v_15:FindFirstChild("fire");
+                                    local Success_35, Error_Message_35 = pcall(function(...)
+                                        local Parent_8 = v_15.Parent;
+                                        local IsDescendantOf_15 = v_15.IsDescendantOf;
+                                        local IsDescendantOf_16 = v_15:IsDescendantOf(game);
+                                        local GetDescendants_8 = v_15.GetDescendants;
+                                        local Descendants_8 = v_15:GetDescendants();
+                                        for i_16, v_16 in ipairs(Descendants_8) do
+                                            local IsA_18 = v_16.IsA;
+                                            local Script_8 = v_16:IsA("Script");
+                                            local Array_22 = {};
+                                            local var31 = table.insert(Array_22, v_16);
+                                        end
+                                        local FindFirstChild_24 = v_15.FindFirstChild;
+                                        local Client_8 = v_15:FindFirstChild("Client");
+                                        local Array_23 = Array_22;
+                                        local var32 = table.insert(Array_23, Client_8);
+                                        local FindFirstChild_25 = v_15.FindFirstChild;
+                                        local GunScript_8 = v_15:FindFirstChild("GunScript");
+                                        local Array_24 = Array_23;
+                                        local var33 = table.insert(Array_24, GunScript_8);
+                                    end)
+                                    local Waited_For_9 = task.wait(0.1);
+                                    local Character_9 = LocalPlayer.Character;
+                                    local Children_9 = Character_9:GetChildren();
+                                    for i_17, v_17 in ipairs(Children_9) do
+                                        local IsA_19 = v_17.IsA;
+                                        local Tool_11 = v_17:IsA("Tool");
+                                        local FindFirstChild_26 = v_17.FindFirstChild;
+                                        local Fire_10 = v_17:FindFirstChild("fire");
+                                        local Success_36, Error_Message_36 = pcall(function(...)
+                                            local Parent_9 = v_17.Parent;
+                                            local IsDescendantOf_17 = v_17.IsDescendantOf;
+                                            local IsDescendantOf_18 = v_17:IsDescendantOf(game);
+                                            local GetDescendants_9 = v_17.GetDescendants;
+                                            local Descendants_9 = v_17:GetDescendants();
+                                            for i_18, v_18 in ipairs(Descendants_9) do
+                                                local IsA_20 = v_18.IsA;
+                                                local Script_9 = v_18:IsA("Script");
+                                                local Array_25 = {};
+                                                local var34 = table.insert(Array_25, v_18);
+                                            end
+                                            local FindFirstChild_27 = v_17.FindFirstChild;
+                                            local Client_9 = v_17:FindFirstChild("Client");
+                                            local Array_26 = Array_25;
+                                            local var35 = table.insert(Array_26, Client_9);
+                                            local FindFirstChild_28 = v_17.FindFirstChild;
+                                            local GunScript_9 = v_17:FindFirstChild("GunScript");
+                                            local Array_27 = Array_26;
+                                            local var36 = table.insert(Array_27, GunScript_9);
+                                        end)
+                                        local Waited_For_10 = task.wait(0.1);
+                                        local Character_10 = LocalPlayer.Character;
+                                        local Children_10 = Character_10:GetChildren();
+                                        for i_19, v_19 in ipairs(Children_10) do
+                                            local IsA_21 = v_19.IsA;
+                                            local Tool_12 = v_19:IsA("Tool");
+                                            local FindFirstChild_29 = v_19.FindFirstChild;
+                                            local Fire_11 = v_19:FindFirstChild("fire");
+                                            local Success_37, Error_Message_37 = pcall(function(...)
+                                                local Parent_10 = v_19.Parent;
+                                                local IsDescendantOf_19 = v_19.IsDescendantOf;
+                                                local IsDescendantOf_20 = v_19:IsDescendantOf(game);
+                                                local GetDescendants_10 = v_19.GetDescendants;
+                                                local Descendants_10 = v_19:GetDescendants();
+                                                for i_20, v_20 in ipairs(Descendants_10) do
+                                                local IsA_22 = v_20.IsA;
+                                                local Script_10 = v_20:IsA("Script");
+                                                local Array_28 = {};
+                                                local var37 = table.insert(Array_28, v_20);
+                                                end
+                                                local FindFirstChild_30 = v_19.FindFirstChild;
+                                                local Client_10 = v_19:FindFirstChild("Client");
+                                                local Array_29 = Array_28;
+                                                local var38 = table.insert(Array_29, Client_10);
+                                                local FindFirstChild_31 = v_19.FindFirstChild;
+                                                local GunScript_10 = v_19:FindFirstChild("GunScript");
+                                                local Array_30 = Array_29;
+                                                local var39 = table.insert(Array_30, GunScript_10);
+                                            end)
+                                            local Waited_For_11 = task.wait(0.1);
+                                            local Character_11 = LocalPlayer.Character;
+                                            local Children_11 = Character_11:GetChildren();
+                                            for i_21, v_21 in ipairs(Children_11) do
+                                                local IsA_23 = v_21.IsA;
+                                                local Tool_13 = v_21:IsA("Tool");
+                                                local FindFirstChild_32 = v_21.FindFirstChild;
+                                                local Fire_12 = v_21:FindFirstChild("fire");
+                                                local Success_38, Error_Message_38 = pcall(function(...)
+                                                local Parent_11 = v_21.Parent;
+                                                local IsDescendantOf_21 = v_21.IsDescendantOf;
+                                                local IsDescendantOf_22 = v_21:IsDescendantOf(game);
+                                                local GetDescendants_11 = v_21.GetDescendants;
+                                                local Descendants_11 = v_21:GetDescendants();
+                                                for i_22, v_22 in ipairs(Descendants_11) do
+                                                local IsA_24 = v_22.IsA;
+                                                local Script_11 = v_22:IsA("Script");
+                                                local Array_31 = {};
+                                                local var40 = table.insert(Array_31, v_22);
+                                                end
+                                                local FindFirstChild_33 = v_21.FindFirstChild;
+                                                local Client_11 = v_21:FindFirstChild("Client");
+                                                local Array_32 = Array_31;
+                                                local var41 = table.insert(Array_32, Client_11);
+                                                local FindFirstChild_34 = v_21.FindFirstChild;
+                                                local GunScript_11 = v_21:FindFirstChild("GunScript");
+                                                local Array_33 = Array_32;
+                                                local var42 = table.insert(Array_33, GunScript_11);
+                                                end)
+                                                local Waited_For_12 = task.wait(0.1);
+                                                local Character_12 = LocalPlayer.Character;
+                                                local Children_12 = Character_12:GetChildren();
+                                                for i_23, v_23 in ipairs(Children_12) do
+                                                local IsA_25 = v_23.IsA;
+                                                local Tool_14 = v_23:IsA("Tool");
+                                                local FindFirstChild_35 = v_23.FindFirstChild;
+                                                local Fire_13 = v_23:FindFirstChild("fire");
+                                                local Success_39, Error_Message_39 = pcall(function(...)
+                                                local Parent_12 = v_23.Parent;
+                                                local IsDescendantOf_23 = v_23.IsDescendantOf;
+                                                local IsDescendantOf_24 = v_23:IsDescendantOf(game);
+                                                local GetDescendants_12 = v_23.GetDescendants;
+                                                local Descendants_12 = v_23:GetDescendants();
+                                                for i_24, v_24 in ipairs(Descendants_12) do
+                                                local IsA_26 = v_24.IsA;
+                                                local Script_12 = v_24:IsA("Script");
+                                                local Array_34 = {};
+                                                local var43 = table.insert(Array_34, v_24);
+                                                end
+                                                local FindFirstChild_36 = v_23.FindFirstChild;
+                                                local Client_12 = v_23:FindFirstChild("Client");
+                                                local Array_35 = Array_34;
+                                                local var44 = table.insert(Array_35, Client_12);
+                                                local FindFirstChild_37 = v_23.FindFirstChild;
+                                                local GunScript_12 = v_23:FindFirstChild("GunScript");
+                                                local Array_36 = Array_35;
+                                                local var45 = table.insert(Array_36, GunScript_12);
+                                                end)
+                                                local Waited_For_13 = task.wait(0.1);
+                                                local Character_13 = LocalPlayer.Character;
+                                                local Children_13 = Character_13:GetChildren();
+                                                for i_25, v_25 in ipairs(Children_13) do
+                                                local IsA_27 = v_25.IsA;
+                                                local Tool_15 = v_25:IsA("Tool");
+                                                local FindFirstChild_38 = v_25.FindFirstChild;
+                                                local Fire_14 = v_25:FindFirstChild("fire");
+                                                local Success_40, Error_Message_40 = pcall(function(...)
+                                                local Parent_13 = v_25.Parent;
+                                                local IsDescendantOf_25 = v_25.IsDescendantOf;
+                                                local IsDescendantOf_26 = v_25:IsDescendantOf(game);
+                                                local GetDescendants_13 = v_25.GetDescendants;
+                                                local Descendants_13 = v_25:GetDescendants();
+                                                for i_26, v_26 in ipairs(Descendants_13) do
+                                                local IsA_28 = v_26.IsA;
+                                                local Script_13 = v_26:IsA("Script");
+                                                local Array_37 = {};
+                                                local var46 = table.insert(Array_37, v_26);
+                                                end
+                                                local FindFirstChild_39 = v_25.FindFirstChild;
+                                                local Client_13 = v_25:FindFirstChild("Client");
+                                                local Array_38 = Array_37;
+                                                local var47 = table.insert(Array_38, Client_13);
+                                                local FindFirstChild_40 = v_25.FindFirstChild;
+                                                local GunScript_13 = v_25:FindFirstChild("GunScript");
+                                                local Array_39 = Array_38;
+                                                local var48 = table.insert(Array_39, GunScript_13);
+                                                end)
+                                                local Waited_For_14 = task.wait(0.1);
+                                                local Character_14 = LocalPlayer.Character;
+                                                local Children_14 = Character_14:GetChildren();
+                                                for i_27, v_27 in ipairs(Children_14) do
+                                                local IsA_29 = v_27.IsA;
+                                                local Tool_16 = v_27:IsA("Tool");
+                                                local FindFirstChild_41 = v_27.FindFirstChild;
+                                                local Fire_15 = v_27:FindFirstChild("fire");
+                                                local Success_41, Error_Message_41 = pcall(function(...)
+                                                local Parent_14 = v_27.Parent;
+                                                local IsDescendantOf_27 = v_27.IsDescendantOf;
+                                                local IsDescendantOf_28 = v_27:IsDescendantOf(game);
+                                                local GetDescendants_14 = v_27.GetDescendants;
+                                                local Descendants_14 = v_27:GetDescendants();
+                                                for i_28, v_28 in ipairs(Descendants_14) do
+                                                local IsA_30 = v_28.IsA;
+                                                local Script_14 = v_28:IsA("Script");
+                                                local Array_40 = {};
+                                                local var49 = table.insert(Array_40, v_28);
+                                                end
+                                                local FindFirstChild_42 = v_27.FindFirstChild;
+                                                local Client_14 = v_27:FindFirstChild("Client");
+                                                local Array_41 = Array_40;
+                                                local var50 = table.insert(Array_41, Client_14);
+                                                local FindFirstChild_43 = v_27.FindFirstChild;
+                                                local GunScript_14 = v_27:FindFirstChild("GunScript");
+                                                local Array_42 = Array_41;
+                                                local var51 = table.insert(Array_42, GunScript_14);
+                                                end)
+                                                local Waited_For_15 = task.wait(0.1);
+                                                local Character_15 = LocalPlayer.Character;
+                                                local Children_15 = Character_15:GetChildren();
+                                                for i_29, v_29 in ipairs(Children_15) do
+                                                local IsA_31 = v_29.IsA;
+                                                local Tool_17 = v_29:IsA("Tool");
+                                                local FindFirstChild_44 = v_29.FindFirstChild;
+                                                local Fire_16 = v_29:FindFirstChild("fire");
+                                                local Success_42, Error_Message_42 = pcall(function(...)
+                                                local Parent_15 = v_29.Parent;
+                                                local IsDescendantOf_29 = v_29.IsDescendantOf;
+                                                local IsDescendantOf_30 = v_29:IsDescendantOf(game);
+                                                local GetDescendants_15 = v_29.GetDescendants;
+                                                local Descendants_15 = v_29:GetDescendants();
+                                                for i_30, v_30 in ipairs(Descendants_15) do
+                                                local IsA_32 = v_30.IsA;
+                                                local Script_15 = v_30:IsA("Script");
+                                                local Array_43 = {};
+                                                local var52 = table.insert(Array_43, v_30);
+                                                end
+                                                local FindFirstChild_45 = v_29.FindFirstChild;
+                                                local Client_15 = v_29:FindFirstChild("Client");
+                                                local Array_44 = Array_43;
+                                                local var53 = table.insert(Array_44, Client_15);
+                                                local FindFirstChild_46 = v_29.FindFirstChild;
+                                                local GunScript_15 = v_29:FindFirstChild("GunScript");
+                                                local Array_45 = Array_44;
+                                                local var54 = table.insert(Array_45, GunScript_15);
+                                                end)
+                                                local Waited_For_16 = task.wait(0.1);
+                                                local Character_16 = LocalPlayer.Character;
+                                                local Children_16 = Character_16:GetChildren();
+                                                for i_31, v_31 in ipairs(Children_16) do
+                                                local IsA_33 = v_31.IsA;
+                                                local Tool_18 = v_31:IsA("Tool");
+                                                local FindFirstChild_47 = v_31.FindFirstChild;
+                                                local Fire_17 = v_31:FindFirstChild("fire");
+                                                local Success_43, Error_Message_43 = pcall(function(...)
+                                                local Parent_16 = v_31.Parent;
+                                                local IsDescendantOf_31 = v_31.IsDescendantOf;
+                                                local IsDescendantOf_32 = v_31:IsDescendantOf(game);
+                                                local GetDescendants_16 = v_31.GetDescendants;
+                                                local Descendants_16 = v_31:GetDescendants();
+                                                for i_32, v_32 in ipairs(Descendants_16) do
+                                                local IsA_34 = v_32.IsA;
+                                                local Script_16 = v_32:IsA("Script");
+                                                local Array_46 = {};
+                                                local var55 = table.insert(Array_46, v_32);
+                                                end
+                                                local FindFirstChild_48 = v_31.FindFirstChild;
+                                                local Client_16 = v_31:FindFirstChild("Client");
+                                                local Array_47 = Array_46;
+                                                local var56 = table.insert(Array_47, Client_16);
+                                                local FindFirstChild_49 = v_31.FindFirstChild;
+                                                local GunScript_16 = v_31:FindFirstChild("GunScript");
+                                                local Array_48 = Array_47;
+                                                local var57 = table.insert(Array_48, GunScript_16);
+                                                end)
+                                                local Waited_For_17 = task.wait(0.1);
+                                                local Character_17 = LocalPlayer.Character;
+                                                local Children_17 = Character_17:GetChildren();
+                                                for i_33, v_33 in ipairs(Children_17) do
+                                                local IsA_35 = v_33.IsA;
+                                                local Tool_19 = v_33:IsA("Tool");
+                                                local FindFirstChild_50 = v_33.FindFirstChild;
+                                                local Fire_18 = v_33:FindFirstChild("fire");
+                                                local Success_44, Error_Message_44 = pcall(function(...)
+                                                local Parent_17 = v_33.Parent;
+                                                local IsDescendantOf_33 = v_33.IsDescendantOf;
+                                                local IsDescendantOf_34 = v_33:IsDescendantOf(game);
+                                                local GetDescendants_17 = v_33.GetDescendants;
+                                                local Descendants_17 = v_33:GetDescendants();
+                                                for i_34, v_34 in ipairs(Descendants_17) do
+                                                local IsA_36 = v_34.IsA;
+                                                local Script_17 = v_34:IsA("Script");
+                                                local Array_49 = {};
+                                                local var58 = table.insert(Array_49, v_34);
+                                                end
+                                                local FindFirstChild_51 = v_33.FindFirstChild;
+                                                local Client_17 = v_33:FindFirstChild("Client");
+                                                local Array_50 = Array_49;
+                                                local var59 = table.insert(Array_50, Client_17);
+                                                local FindFirstChild_52 = v_33.FindFirstChild;
+                                                local GunScript_17 = v_33:FindFirstChild("GunScript");
+                                                local Array_51 = Array_50;
+                                                local var60 = table.insert(Array_51, GunScript_17);
+                                                end)
+                                                local Waited_For_18 = task.wait(0.1);
+                                                local Character_18 = LocalPlayer.Character;
+                                                local Children_18 = Character_18:GetChildren();
+                                                for i_35, v_35 in ipairs(Children_18) do
+                                                local IsA_37 = v_35.IsA;
+                                                local Tool_20 = v_35:IsA("Tool");
+                                                local FindFirstChild_53 = v_35.FindFirstChild;
+                                                local Fire_19 = v_35:FindFirstChild("fire");
+                                                local Success_45, Error_Message_45 = pcall(function(...)
+                                                local Parent_18 = v_35.Parent;
+                                                local IsDescendantOf_35 = v_35.IsDescendantOf;
+                                                local IsDescendantOf_36 = v_35:IsDescendantOf(game);
+                                                local GetDescendants_18 = v_35.GetDescendants;
+                                                local Descendants_18 = v_35:GetDescendants();
+                                                for i_36, v_36 in ipairs(Descendants_18) do
+                                                local IsA_38 = v_36.IsA;
+                                                local Script_18 = v_36:IsA("Script");
+                                                local Array_52 = {};
+                                                local var61 = table.insert(Array_52, v_36);
+                                                end
+                                                local FindFirstChild_54 = v_35.FindFirstChild;
+                                                local Client_18 = v_35:FindFirstChild("Client");
+                                                local Array_53 = Array_52;
+                                                local var62 = table.insert(Array_53, Client_18);
+                                                local FindFirstChild_55 = v_35.FindFirstChild;
+                                                local GunScript_18 = v_35:FindFirstChild("GunScript");
+                                                local Array_54 = Array_53;
+                                                local var63 = table.insert(Array_54, GunScript_18);
+                                                end)
+                                                local Waited_For_19 = task.wait(0.1);
+                                                local Character_19 = LocalPlayer.Character;
+                                                local Children_19 = Character_19:GetChildren();
+                                                for i_37, v_37 in ipairs(Children_19) do
+                                                local IsA_39 = v_37.IsA;
+                                                local Tool_21 = v_37:IsA("Tool");
+                                                local FindFirstChild_56 = v_37.FindFirstChild;
+                                                local Fire_20 = v_37:FindFirstChild("fire");
+                                                local Success_46, Error_Message_46 = pcall(function(...)
+                                                local Parent_19 = v_37.Parent;
+                                                local IsDescendantOf_37 = v_37.IsDescendantOf;
+                                                local IsDescendantOf_38 = v_37:IsDescendantOf(game);
+                                                local GetDescendants_19 = v_37.GetDescendants;
+                                                local Descendants_19 = v_37:GetDescendants();
+                                                for i_38, v_38 in ipairs(Descendants_19) do
+                                                local IsA_40 = v_38.IsA;
+                                                local Script_19 = v_38:IsA("Script");
+                                                local Array_55 = {};
+                                                local var64 = table.insert(Array_55, v_38);
+                                                end
+                                                local FindFirstChild_57 = v_37.FindFirstChild;
+                                                local Client_19 = v_37:FindFirstChild("Client");
+                                                local Array_56 = Array_55;
+                                                local var65 = table.insert(Array_56, Client_19);
+                                                local FindFirstChild_58 = v_37.FindFirstChild;
+                                                local GunScript_19 = v_37:FindFirstChild("GunScript");
+                                                local Array_57 = Array_56;
+                                                local var66 = table.insert(Array_57, GunScript_19);
+                                                end)
+                                                local Waited_For_20 = task.wait(0.1);
+                                                local Character_20 = LocalPlayer.Character;
+                                                local Children_20 = Character_20:GetChildren();
+                                                for i_39, v_39 in ipairs(Children_20) do
+                                                local IsA_41 = v_39.IsA;
+                                                local Tool_22 = v_39:IsA("Tool");
+                                                local FindFirstChild_59 = v_39.FindFirstChild;
+                                                local Fire_21 = v_39:FindFirstChild("fire");
+                                                local Success_47, Error_Message_47 = pcall(function(...)
+                                                local Parent_20 = v_39.Parent;
+                                                local IsDescendantOf_39 = v_39.IsDescendantOf;
+                                                local IsDescendantOf_40 = v_39:IsDescendantOf(game);
+                                                local GetDescendants_20 = v_39.GetDescendants;
+                                                local Descendants_20 = v_39:GetDescendants();
+                                                for i_40, v_40 in ipairs(Descendants_20) do
+                                                local IsA_42 = v_40.IsA;
+                                                local Script_20 = v_40:IsA("Script");
+                                                local Array_58 = {};
+                                                local var67 = table.insert(Array_58, v_40);
+                                                end
+                                                local FindFirstChild_60 = v_39.FindFirstChild;
+                                                local Client_20 = v_39:FindFirstChild("Client");
+                                                local Array_59 = Array_58;
+                                                local var68 = table.insert(Array_59, Client_20);
+                                                local FindFirstChild_61 = v_39.FindFirstChild;
+                                                local GunScript_20 = v_39:FindFirstChild("GunScript");
+                                                local Array_60 = Array_59;
+                                                local var69 = table.insert(Array_60, GunScript_20);
+                                                end)
+                                                local Waited_For_21 = task.wait(0.1);
+                                                local Character_21 = LocalPlayer.Character;
+                                                local Children_21 = Character_21:GetChildren();
+                                                for i_41, v_41 in ipairs(Children_21) do
+                                                local IsA_43 = v_41.IsA;
+                                                local Tool_23 = v_41:IsA("Tool");
+                                                local FindFirstChild_62 = v_41.FindFirstChild;
+                                                local Fire_22 = v_41:FindFirstChild("fire");
+                                                local Success_48, Error_Message_48 = pcall(function(...)
+                                                local Parent_21 = v_41.Parent;
+                                                local IsDescendantOf_41 = v_41.IsDescendantOf;
+                                                local IsDescendantOf_42 = v_41:IsDescendantOf(game);
+                                                local GetDescendants_21 = v_41.GetDescendants;
+                                                local Descendants_21 = v_41:GetDescendants();
+                                                for i_42, v_42 in ipairs(Descendants_21) do
+                                                local IsA_44 = v_42.IsA;
+                                                local Script_21 = v_42:IsA("Script");
+                                                local Array_61 = {};
+                                                local var70 = table.insert(Array_61, v_42);
+                                                end
+                                                local FindFirstChild_63 = v_41.FindFirstChild;
+                                                error("[internal]:659: too many operations")
+                                                end)
+    error("[internal]:659: too many operations")
+                                                                                    end
+                                                                                end
+                                                                            end
+                                                                        end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end);
+local Spawned_2 = task.spawn(function()
+    local Connection_Result;
+    Connection_Result = RunService.Heartbeat:Wait();
+    local G_BlockClick_3 = _G.BlockClick;
+    local Success_49, Error_Message_49 = pcall(function(...)
+        local PlayerGui = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_64 = PlayerGui.FindFirstChild;
+        local Main = PlayerGui:FindFirstChild("Main");
+        local FindFirstChild_65 = Main.FindFirstChild;
+        local MainGameFrame = Main:FindFirstChild("MainGameFrame");
+        local FindFirstChild_66 = MainGameFrame.FindFirstChild;
+        local PlayersFrame = MainGameFrame:FindFirstChild("PlayersFrame");
+        local FindFirstChild_67 = PlayersFrame.FindFirstChild;
+        local TeamRedFrame = PlayersFrame:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_68 = PlayersFrame.FindFirstChild;
+        local TeamBlueFrame = PlayersFrame:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren = TeamRedFrame.GetChildren;
+    local Children_22 = TeamRedFrame:GetChildren();
+    for i_43, v_43 in ipairs(Children_22) do
+        local IsA_45 = v_43.IsA;
+        local Frame = v_43:IsA("Frame");
+        local Name = v_43.Name;
+        local Array_62 = {};
+        local var71 = table.insert(Array_62, Name);
+    end
+    local GetChildren_2 = TeamBlueFrame.GetChildren;
+    local Children_23 = TeamBlueFrame:GetChildren();
+    for i_44, v_44 in ipairs(Children_23) do
+        local IsA_46 = v_44.IsA;
+        local Frame_2 = v_44:IsA("Frame");
+        local Name_2 = v_44.Name;
+        local Array_63 = {};
+        local var72 = table.insert(Array_63, Name_2);
+    end
+    local Name_3 = LocalPlayer.Name;
+    local Character_22 = LocalPlayer.Character;
+    local IsDescendantOf_43 = Character_22:IsDescendantOf(workspace);
+    local HumanoidRootPart = Character_22:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_2;
+    Connection_Result_2 = RunService.Heartbeat:wait();
+    local G_BlockClick_4 = _G.BlockClick;
+    local Success_50, Error_Message_50 = pcall(function(...)
+        local PlayerGui_2 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_69 = PlayerGui_2.FindFirstChild;
+        local Main_2 = PlayerGui_2:FindFirstChild("Main");
+        local FindFirstChild_70 = Main_2.FindFirstChild;
+        local MainGameFrame_2 = Main_2:FindFirstChild("MainGameFrame");
+        local FindFirstChild_71 = MainGameFrame_2.FindFirstChild;
+        local PlayersFrame_2 = MainGameFrame_2:FindFirstChild("PlayersFrame");
+        local FindFirstChild_72 = PlayersFrame_2.FindFirstChild;
+        local TeamRedFrame_2 = PlayersFrame_2:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_73 = PlayersFrame_2.FindFirstChild;
+        local TeamBlueFrame_2 = PlayersFrame_2:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_3 = TeamRedFrame_2.GetChildren;
+    local Children_24 = TeamRedFrame_2:GetChildren();
+    for i_45, v_45 in ipairs(Children_24) do
+        local IsA_47 = v_45.IsA;
+        local Frame_3 = v_45:IsA("Frame");
+        local Name_4 = v_45.Name;
+        local Array_64 = {};
+        local var73 = table.insert(Array_64, Name_4);
+    end
+    local GetChildren_4 = TeamBlueFrame_2.GetChildren;
+    local Children_25 = TeamBlueFrame_2:GetChildren();
+    for i_46, v_46 in ipairs(Children_25) do
+        local IsA_48 = v_46.IsA;
+        local Frame_4 = v_46:IsA("Frame");
+        local Name_5 = v_46.Name;
+        local Array_65 = {};
+        local var74 = table.insert(Array_65, Name_5);
+    end
+    local Name_6 = LocalPlayer.Name;
+    local Character_23 = LocalPlayer.Character;
+    local IsDescendantOf_44 = Character_23:IsDescendantOf(workspace);
+    local HumanoidRootPart_2 = Character_23:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_3;
+    Connection_Result_3 = RunService.Heartbeat:wait();
+    local G_BlockClick_5 = _G.BlockClick;
+    local Success_51, Error_Message_51 = pcall(function(...)
+        local PlayerGui_3 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_74 = PlayerGui_3.FindFirstChild;
+        local Main_3 = PlayerGui_3:FindFirstChild("Main");
+        local FindFirstChild_75 = Main_3.FindFirstChild;
+        local MainGameFrame_3 = Main_3:FindFirstChild("MainGameFrame");
+        local FindFirstChild_76 = MainGameFrame_3.FindFirstChild;
+        local PlayersFrame_3 = MainGameFrame_3:FindFirstChild("PlayersFrame");
+        local FindFirstChild_77 = PlayersFrame_3.FindFirstChild;
+        local TeamRedFrame_3 = PlayersFrame_3:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_78 = PlayersFrame_3.FindFirstChild;
+        local TeamBlueFrame_3 = PlayersFrame_3:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_5 = TeamRedFrame_3.GetChildren;
+    local Children_26 = TeamRedFrame_3:GetChildren();
+    for i_47, v_47 in ipairs(Children_26) do
+        local IsA_49 = v_47.IsA;
+        local Frame_5 = v_47:IsA("Frame");
+        local Name_7 = v_47.Name;
+        local Array_66 = {};
+        local var75 = table.insert(Array_66, Name_7);
+    end
+    local GetChildren_6 = TeamBlueFrame_3.GetChildren;
+    local Children_27 = TeamBlueFrame_3:GetChildren();
+    for i_48, v_48 in ipairs(Children_27) do
+        local IsA_50 = v_48.IsA;
+        local Frame_6 = v_48:IsA("Frame");
+        local Name_8 = v_48.Name;
+        local Array_67 = {};
+        local var76 = table.insert(Array_67, Name_8);
+    end
+    local Name_9 = LocalPlayer.Name;
+    local Character_24 = LocalPlayer.Character;
+    local IsDescendantOf_45 = Character_24:IsDescendantOf(workspace);
+    local HumanoidRootPart_3 = Character_24:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_4;
+    Connection_Result_4 = RunService.Heartbeat:wait();
+    local G_BlockClick_6 = _G.BlockClick;
+    local Success_52, Error_Message_52 = pcall(function(...)
+        local PlayerGui_4 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_79 = PlayerGui_4.FindFirstChild;
+        local Main_4 = PlayerGui_4:FindFirstChild("Main");
+        local FindFirstChild_80 = Main_4.FindFirstChild;
+        local MainGameFrame_4 = Main_4:FindFirstChild("MainGameFrame");
+        local FindFirstChild_81 = MainGameFrame_4.FindFirstChild;
+        local PlayersFrame_4 = MainGameFrame_4:FindFirstChild("PlayersFrame");
+        local FindFirstChild_82 = PlayersFrame_4.FindFirstChild;
+        local TeamRedFrame_4 = PlayersFrame_4:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_83 = PlayersFrame_4.FindFirstChild;
+        local TeamBlueFrame_4 = PlayersFrame_4:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_7 = TeamRedFrame_4.GetChildren;
+    local Children_28 = TeamRedFrame_4:GetChildren();
+    for i_49, v_49 in ipairs(Children_28) do
+        local IsA_51 = v_49.IsA;
+        local Frame_7 = v_49:IsA("Frame");
+        local Name_10 = v_49.Name;
+        local Array_68 = {};
+        local var77 = table.insert(Array_68, Name_10);
+    end
+    local GetChildren_8 = TeamBlueFrame_4.GetChildren;
+    local Children_29 = TeamBlueFrame_4:GetChildren();
+    for i_50, v_50 in ipairs(Children_29) do
+        local IsA_52 = v_50.IsA;
+        local Frame_8 = v_50:IsA("Frame");
+        local Name_11 = v_50.Name;
+        local Array_69 = {};
+        local var78 = table.insert(Array_69, Name_11);
+    end
+    local Name_12 = LocalPlayer.Name;
+    local Character_25 = LocalPlayer.Character;
+    local IsDescendantOf_46 = Character_25:IsDescendantOf(workspace);
+    local HumanoidRootPart_4 = Character_25:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_5;
+    Connection_Result_5 = RunService.Heartbeat:wait();
+    local G_BlockClick_7 = _G.BlockClick;
+    local Success_53, Error_Message_53 = pcall(function(...)
+        local PlayerGui_5 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_84 = PlayerGui_5.FindFirstChild;
+        local Main_5 = PlayerGui_5:FindFirstChild("Main");
+        local FindFirstChild_85 = Main_5.FindFirstChild;
+        local MainGameFrame_5 = Main_5:FindFirstChild("MainGameFrame");
+        local FindFirstChild_86 = MainGameFrame_5.FindFirstChild;
+        local PlayersFrame_5 = MainGameFrame_5:FindFirstChild("PlayersFrame");
+        local FindFirstChild_87 = PlayersFrame_5.FindFirstChild;
+        local TeamRedFrame_5 = PlayersFrame_5:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_88 = PlayersFrame_5.FindFirstChild;
+        local TeamBlueFrame_5 = PlayersFrame_5:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_9 = TeamRedFrame_5.GetChildren;
+    local Children_30 = TeamRedFrame_5:GetChildren();
+    for i_51, v_51 in ipairs(Children_30) do
+        local IsA_53 = v_51.IsA;
+        local Frame_9 = v_51:IsA("Frame");
+        local Name_13 = v_51.Name;
+        local Array_70 = {};
+        local var79 = table.insert(Array_70, Name_13);
+    end
+    local GetChildren_10 = TeamBlueFrame_5.GetChildren;
+    local Children_31 = TeamBlueFrame_5:GetChildren();
+    for i_52, v_52 in ipairs(Children_31) do
+        local IsA_54 = v_52.IsA;
+        local Frame_10 = v_52:IsA("Frame");
+        local Name_14 = v_52.Name;
+        local Array_71 = {};
+        local var80 = table.insert(Array_71, Name_14);
+    end
+    local Name_15 = LocalPlayer.Name;
+    local Character_26 = LocalPlayer.Character;
+    local IsDescendantOf_47 = Character_26:IsDescendantOf(workspace);
+    local HumanoidRootPart_5 = Character_26:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_6;
+    Connection_Result_6 = RunService.Heartbeat:wait();
+    local G_BlockClick_8 = _G.BlockClick;
+    local Success_54, Error_Message_54 = pcall(function(...)
+        local PlayerGui_6 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_89 = PlayerGui_6.FindFirstChild;
+        local Main_6 = PlayerGui_6:FindFirstChild("Main");
+        local FindFirstChild_90 = Main_6.FindFirstChild;
+        local MainGameFrame_6 = Main_6:FindFirstChild("MainGameFrame");
+        local FindFirstChild_91 = MainGameFrame_6.FindFirstChild;
+        local PlayersFrame_6 = MainGameFrame_6:FindFirstChild("PlayersFrame");
+        local FindFirstChild_92 = PlayersFrame_6.FindFirstChild;
+        local TeamRedFrame_6 = PlayersFrame_6:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_93 = PlayersFrame_6.FindFirstChild;
+        local TeamBlueFrame_6 = PlayersFrame_6:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_11 = TeamRedFrame_6.GetChildren;
+    local Children_32 = TeamRedFrame_6:GetChildren();
+    for i_53, v_53 in ipairs(Children_32) do
+        local IsA_55 = v_53.IsA;
+        local Frame_11 = v_53:IsA("Frame");
+        local Name_16 = v_53.Name;
+        local Array_72 = {};
+        local var81 = table.insert(Array_72, Name_16);
+    end
+    local GetChildren_12 = TeamBlueFrame_6.GetChildren;
+    local Children_33 = TeamBlueFrame_6:GetChildren();
+    for i_54, v_54 in ipairs(Children_33) do
+        local IsA_56 = v_54.IsA;
+        local Frame_12 = v_54:IsA("Frame");
+        local Name_17 = v_54.Name;
+        local Array_73 = {};
+        local var82 = table.insert(Array_73, Name_17);
+    end
+    local Name_18 = LocalPlayer.Name;
+    local Character_27 = LocalPlayer.Character;
+    local IsDescendantOf_48 = Character_27:IsDescendantOf(workspace);
+    local HumanoidRootPart_6 = Character_27:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_7;
+    Connection_Result_7 = RunService.Heartbeat:wait();
+    local G_BlockClick_9 = _G.BlockClick;
+    local Success_55, Error_Message_55 = pcall(function(...)
+        local PlayerGui_7 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_94 = PlayerGui_7.FindFirstChild;
+        local Main_7 = PlayerGui_7:FindFirstChild("Main");
+        local FindFirstChild_95 = Main_7.FindFirstChild;
+        local MainGameFrame_7 = Main_7:FindFirstChild("MainGameFrame");
+        local FindFirstChild_96 = MainGameFrame_7.FindFirstChild;
+        local PlayersFrame_7 = MainGameFrame_7:FindFirstChild("PlayersFrame");
+        local FindFirstChild_97 = PlayersFrame_7.FindFirstChild;
+        local TeamRedFrame_7 = PlayersFrame_7:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_98 = PlayersFrame_7.FindFirstChild;
+        local TeamBlueFrame_7 = PlayersFrame_7:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_13 = TeamRedFrame_7.GetChildren;
+    local Children_34 = TeamRedFrame_7:GetChildren();
+    for i_55, v_55 in ipairs(Children_34) do
+        local IsA_57 = v_55.IsA;
+        local Frame_13 = v_55:IsA("Frame");
+        local Name_19 = v_55.Name;
+        local Array_74 = {};
+        local var83 = table.insert(Array_74, Name_19);
+    end
+    local GetChildren_14 = TeamBlueFrame_7.GetChildren;
+    local Children_35 = TeamBlueFrame_7:GetChildren();
+    for i_56, v_56 in ipairs(Children_35) do
+        local IsA_58 = v_56.IsA;
+        local Frame_14 = v_56:IsA("Frame");
+        local Name_20 = v_56.Name;
+        local Array_75 = {};
+        local var84 = table.insert(Array_75, Name_20);
+    end
+    local Name_21 = LocalPlayer.Name;
+    local Character_28 = LocalPlayer.Character;
+    local IsDescendantOf_49 = Character_28:IsDescendantOf(workspace);
+    local HumanoidRootPart_7 = Character_28:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_8;
+    Connection_Result_8 = RunService.Heartbeat:wait();
+    local G_BlockClick_10 = _G.BlockClick;
+    local Success_56, Error_Message_56 = pcall(function(...)
+        local PlayerGui_8 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_99 = PlayerGui_8.FindFirstChild;
+        local Main_8 = PlayerGui_8:FindFirstChild("Main");
+        local FindFirstChild_100 = Main_8.FindFirstChild;
+        local MainGameFrame_8 = Main_8:FindFirstChild("MainGameFrame");
+        local FindFirstChild_101 = MainGameFrame_8.FindFirstChild;
+        local PlayersFrame_8 = MainGameFrame_8:FindFirstChild("PlayersFrame");
+        local FindFirstChild_102 = PlayersFrame_8.FindFirstChild;
+        local TeamRedFrame_8 = PlayersFrame_8:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_103 = PlayersFrame_8.FindFirstChild;
+        local TeamBlueFrame_8 = PlayersFrame_8:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_15 = TeamRedFrame_8.GetChildren;
+    local Children_36 = TeamRedFrame_8:GetChildren();
+    for i_57, v_57 in ipairs(Children_36) do
+        local IsA_59 = v_57.IsA;
+        local Frame_15 = v_57:IsA("Frame");
+        local Name_22 = v_57.Name;
+        local Array_76 = {};
+        local var85 = table.insert(Array_76, Name_22);
+    end
+    local GetChildren_16 = TeamBlueFrame_8.GetChildren;
+    local Children_37 = TeamBlueFrame_8:GetChildren();
+    for i_58, v_58 in ipairs(Children_37) do
+        local IsA_60 = v_58.IsA;
+        local Frame_16 = v_58:IsA("Frame");
+        local Name_23 = v_58.Name;
+        local Array_77 = {};
+        local var86 = table.insert(Array_77, Name_23);
+    end
+    local Name_24 = LocalPlayer.Name;
+    local Character_29 = LocalPlayer.Character;
+    local IsDescendantOf_50 = Character_29:IsDescendantOf(workspace);
+    local HumanoidRootPart_8 = Character_29:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_9;
+    Connection_Result_9 = RunService.Heartbeat:wait();
+    local G_BlockClick_11 = _G.BlockClick;
+    local Success_57, Error_Message_57 = pcall(function(...)
+        local PlayerGui_9 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_104 = PlayerGui_9.FindFirstChild;
+        local Main_9 = PlayerGui_9:FindFirstChild("Main");
+        local FindFirstChild_105 = Main_9.FindFirstChild;
+        local MainGameFrame_9 = Main_9:FindFirstChild("MainGameFrame");
+        local FindFirstChild_106 = MainGameFrame_9.FindFirstChild;
+        local PlayersFrame_9 = MainGameFrame_9:FindFirstChild("PlayersFrame");
+        local FindFirstChild_107 = PlayersFrame_9.FindFirstChild;
+        local TeamRedFrame_9 = PlayersFrame_9:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_108 = PlayersFrame_9.FindFirstChild;
+        local TeamBlueFrame_9 = PlayersFrame_9:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_17 = TeamRedFrame_9.GetChildren;
+    local Children_38 = TeamRedFrame_9:GetChildren();
+    for i_59, v_59 in ipairs(Children_38) do
+        local IsA_61 = v_59.IsA;
+        local Frame_17 = v_59:IsA("Frame");
+        local Name_25 = v_59.Name;
+        local Array_78 = {};
+        local var87 = table.insert(Array_78, Name_25);
+    end
+    local GetChildren_18 = TeamBlueFrame_9.GetChildren;
+    local Children_39 = TeamBlueFrame_9:GetChildren();
+    for i_60, v_60 in ipairs(Children_39) do
+        local IsA_62 = v_60.IsA;
+        local Frame_18 = v_60:IsA("Frame");
+        local Name_26 = v_60.Name;
+        local Array_79 = {};
+        local var88 = table.insert(Array_79, Name_26);
+    end
+    local Name_27 = LocalPlayer.Name;
+    local Character_30 = LocalPlayer.Character;
+    local IsDescendantOf_51 = Character_30:IsDescendantOf(workspace);
+    local HumanoidRootPart_9 = Character_30:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_10;
+    Connection_Result_10 = RunService.Heartbeat:wait();
+    local G_BlockClick_12 = _G.BlockClick;
+    local Success_58, Error_Message_58 = pcall(function(...)
+        local PlayerGui_10 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_109 = PlayerGui_10.FindFirstChild;
+        local Main_10 = PlayerGui_10:FindFirstChild("Main");
+        local FindFirstChild_110 = Main_10.FindFirstChild;
+        local MainGameFrame_10 = Main_10:FindFirstChild("MainGameFrame");
+        local FindFirstChild_111 = MainGameFrame_10.FindFirstChild;
+        local PlayersFrame_10 = MainGameFrame_10:FindFirstChild("PlayersFrame");
+        local FindFirstChild_112 = PlayersFrame_10.FindFirstChild;
+        local TeamRedFrame_10 = PlayersFrame_10:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_113 = PlayersFrame_10.FindFirstChild;
+        local TeamBlueFrame_10 = PlayersFrame_10:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_19 = TeamRedFrame_10.GetChildren;
+    local Children_40 = TeamRedFrame_10:GetChildren();
+    for i_61, v_61 in ipairs(Children_40) do
+        local IsA_63 = v_61.IsA;
+        local Frame_19 = v_61:IsA("Frame");
+        local Name_28 = v_61.Name;
+        local Array_80 = {};
+        local var89 = table.insert(Array_80, Name_28);
+    end
+    local GetChildren_20 = TeamBlueFrame_10.GetChildren;
+    local Children_41 = TeamBlueFrame_10:GetChildren();
+    for i_62, v_62 in ipairs(Children_41) do
+        local IsA_64 = v_62.IsA;
+        local Frame_20 = v_62:IsA("Frame");
+        local Name_29 = v_62.Name;
+        local Array_81 = {};
+        local var90 = table.insert(Array_81, Name_29);
+    end
+    local Name_30 = LocalPlayer.Name;
+    local Character_31 = LocalPlayer.Character;
+    local IsDescendantOf_52 = Character_31:IsDescendantOf(workspace);
+    local HumanoidRootPart_10 = Character_31:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_11;
+    Connection_Result_11 = RunService.Heartbeat:wait();
+    local G_BlockClick_13 = _G.BlockClick;
+    local Success_59, Error_Message_59 = pcall(function(...)
+        local PlayerGui_11 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_114 = PlayerGui_11.FindFirstChild;
+        local Main_11 = PlayerGui_11:FindFirstChild("Main");
+        local FindFirstChild_115 = Main_11.FindFirstChild;
+        local MainGameFrame_11 = Main_11:FindFirstChild("MainGameFrame");
+        local FindFirstChild_116 = MainGameFrame_11.FindFirstChild;
+        local PlayersFrame_11 = MainGameFrame_11:FindFirstChild("PlayersFrame");
+        local FindFirstChild_117 = PlayersFrame_11.FindFirstChild;
+        local TeamRedFrame_11 = PlayersFrame_11:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_118 = PlayersFrame_11.FindFirstChild;
+        local TeamBlueFrame_11 = PlayersFrame_11:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_21 = TeamRedFrame_11.GetChildren;
+    local Children_42 = TeamRedFrame_11:GetChildren();
+    for i_63, v_63 in ipairs(Children_42) do
+        local IsA_65 = v_63.IsA;
+        local Frame_21 = v_63:IsA("Frame");
+        local Name_31 = v_63.Name;
+        local Array_82 = {};
+        local var91 = table.insert(Array_82, Name_31);
+    end
+    local GetChildren_22 = TeamBlueFrame_11.GetChildren;
+    local Children_43 = TeamBlueFrame_11:GetChildren();
+    for i_64, v_64 in ipairs(Children_43) do
+        local IsA_66 = v_64.IsA;
+        local Frame_22 = v_64:IsA("Frame");
+        local Name_32 = v_64.Name;
+        local Array_83 = {};
+        local var92 = table.insert(Array_83, Name_32);
+    end
+    local Name_33 = LocalPlayer.Name;
+    local Character_32 = LocalPlayer.Character;
+    local IsDescendantOf_53 = Character_32:IsDescendantOf(workspace);
+    local HumanoidRootPart_11 = Character_32:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_12;
+    Connection_Result_12 = RunService.Heartbeat:wait();
+    local G_BlockClick_14 = _G.BlockClick;
+    local Success_60, Error_Message_60 = pcall(function(...)
+        local PlayerGui_12 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_119 = PlayerGui_12.FindFirstChild;
+        local Main_12 = PlayerGui_12:FindFirstChild("Main");
+        local FindFirstChild_120 = Main_12.FindFirstChild;
+        local MainGameFrame_12 = Main_12:FindFirstChild("MainGameFrame");
+        local FindFirstChild_121 = MainGameFrame_12.FindFirstChild;
+        local PlayersFrame_12 = MainGameFrame_12:FindFirstChild("PlayersFrame");
+        local FindFirstChild_122 = PlayersFrame_12.FindFirstChild;
+        local TeamRedFrame_12 = PlayersFrame_12:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_123 = PlayersFrame_12.FindFirstChild;
+        local TeamBlueFrame_12 = PlayersFrame_12:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_23 = TeamRedFrame_12.GetChildren;
+    local Children_44 = TeamRedFrame_12:GetChildren();
+    for i_65, v_65 in ipairs(Children_44) do
+        local IsA_67 = v_65.IsA;
+        local Frame_23 = v_65:IsA("Frame");
+        local Name_34 = v_65.Name;
+        local Array_84 = {};
+        local var93 = table.insert(Array_84, Name_34);
+    end
+    local GetChildren_24 = TeamBlueFrame_12.GetChildren;
+    local Children_45 = TeamBlueFrame_12:GetChildren();
+    for i_66, v_66 in ipairs(Children_45) do
+        local IsA_68 = v_66.IsA;
+        local Frame_24 = v_66:IsA("Frame");
+        local Name_35 = v_66.Name;
+        local Array_85 = {};
+        local var94 = table.insert(Array_85, Name_35);
+    end
+    local Name_36 = LocalPlayer.Name;
+    local Character_33 = LocalPlayer.Character;
+    local IsDescendantOf_54 = Character_33:IsDescendantOf(workspace);
+    local HumanoidRootPart_12 = Character_33:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_13;
+    Connection_Result_13 = RunService.Heartbeat:wait();
+    local G_BlockClick_15 = _G.BlockClick;
+    local Success_61, Error_Message_61 = pcall(function(...)
+        local PlayerGui_13 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_124 = PlayerGui_13.FindFirstChild;
+        local Main_13 = PlayerGui_13:FindFirstChild("Main");
+        local FindFirstChild_125 = Main_13.FindFirstChild;
+        local MainGameFrame_13 = Main_13:FindFirstChild("MainGameFrame");
+        local FindFirstChild_126 = MainGameFrame_13.FindFirstChild;
+        local PlayersFrame_13 = MainGameFrame_13:FindFirstChild("PlayersFrame");
+        local FindFirstChild_127 = PlayersFrame_13.FindFirstChild;
+        local TeamRedFrame_13 = PlayersFrame_13:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_128 = PlayersFrame_13.FindFirstChild;
+        local TeamBlueFrame_13 = PlayersFrame_13:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_25 = TeamRedFrame_13.GetChildren;
+    local Children_46 = TeamRedFrame_13:GetChildren();
+    for i_67, v_67 in ipairs(Children_46) do
+        local IsA_69 = v_67.IsA;
+        local Frame_25 = v_67:IsA("Frame");
+        local Name_37 = v_67.Name;
+        local Array_86 = {};
+        local var95 = table.insert(Array_86, Name_37);
+    end
+    local GetChildren_26 = TeamBlueFrame_13.GetChildren;
+    local Children_47 = TeamBlueFrame_13:GetChildren();
+    for i_68, v_68 in ipairs(Children_47) do
+        local IsA_70 = v_68.IsA;
+        local Frame_26 = v_68:IsA("Frame");
+        local Name_38 = v_68.Name;
+        local Array_87 = {};
+        local var96 = table.insert(Array_87, Name_38);
+    end
+    local Name_39 = LocalPlayer.Name;
+    local Character_34 = LocalPlayer.Character;
+    local IsDescendantOf_55 = Character_34:IsDescendantOf(workspace);
+    local HumanoidRootPart_13 = Character_34:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_14;
+    Connection_Result_14 = RunService.Heartbeat:wait();
+    local G_BlockClick_16 = _G.BlockClick;
+    local Success_62, Error_Message_62 = pcall(function(...)
+        local PlayerGui_14 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_129 = PlayerGui_14.FindFirstChild;
+        local Main_14 = PlayerGui_14:FindFirstChild("Main");
+        local FindFirstChild_130 = Main_14.FindFirstChild;
+        local MainGameFrame_14 = Main_14:FindFirstChild("MainGameFrame");
+        local FindFirstChild_131 = MainGameFrame_14.FindFirstChild;
+        local PlayersFrame_14 = MainGameFrame_14:FindFirstChild("PlayersFrame");
+        local FindFirstChild_132 = PlayersFrame_14.FindFirstChild;
+        local TeamRedFrame_14 = PlayersFrame_14:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_133 = PlayersFrame_14.FindFirstChild;
+        local TeamBlueFrame_14 = PlayersFrame_14:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_27 = TeamRedFrame_14.GetChildren;
+    local Children_48 = TeamRedFrame_14:GetChildren();
+    for i_69, v_69 in ipairs(Children_48) do
+        local IsA_71 = v_69.IsA;
+        local Frame_27 = v_69:IsA("Frame");
+        local Name_40 = v_69.Name;
+        local Array_88 = {};
+        local var97 = table.insert(Array_88, Name_40);
+    end
+    local GetChildren_28 = TeamBlueFrame_14.GetChildren;
+    local Children_49 = TeamBlueFrame_14:GetChildren();
+    for i_70, v_70 in ipairs(Children_49) do
+        local IsA_72 = v_70.IsA;
+        local Frame_28 = v_70:IsA("Frame");
+        local Name_41 = v_70.Name;
+        local Array_89 = {};
+        local var98 = table.insert(Array_89, Name_41);
+    end
+    local Name_42 = LocalPlayer.Name;
+    local Character_35 = LocalPlayer.Character;
+    local IsDescendantOf_56 = Character_35:IsDescendantOf(workspace);
+    local HumanoidRootPart_14 = Character_35:FindFirstChild("HumanoidRootPart");
+    local Connection_Result_15;
+    Connection_Result_15 = RunService.Heartbeat:wait();
+    local G_BlockClick_17 = _G.BlockClick;
+    local Success_63, Error_Message_63 = pcall(function(...)
+        local PlayerGui_15 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_134 = PlayerGui_15.FindFirstChild;
+        local Main_15 = PlayerGui_15:FindFirstChild("Main");
+        local FindFirstChild_135 = Main_15.FindFirstChild;
+        local MainGameFrame_15 = Main_15:FindFirstChild("MainGameFrame");
+        error("[internal]:659: too many operations")
+    end)
+    error("[internal]:659: too many operations")
+end);
+local Button1Down = Mouse.Button1Down;
+local Connect_3 = Button1Down.Connect;
+local Connected_3 = Button1Down:Connect(function(p1_0, p2_0)
+    local G_BlockClick_18 = _G.BlockClick;
+    local Success_64, Error_Message_64 = pcall(function(...)
+        local PlayerGui_16 = LocalPlayer:FindFirstChildOfClass("PlayerGui");
+        local FindFirstChild_136 = PlayerGui_16.FindFirstChild;
+        local Main_16 = PlayerGui_16:FindFirstChild("Main");
+        local FindFirstChild_137 = Main_16.FindFirstChild;
+        local MainGameFrame_16 = Main_16:FindFirstChild("MainGameFrame");
+        local FindFirstChild_138 = MainGameFrame_16.FindFirstChild;
+        local PlayersFrame_15 = MainGameFrame_16:FindFirstChild("PlayersFrame");
+        local FindFirstChild_139 = PlayersFrame_15.FindFirstChild;
+        local TeamRedFrame_15 = PlayersFrame_15:FindFirstChild("TeamRedFrame");
+        local FindFirstChild_140 = PlayersFrame_15.FindFirstChild;
+        local TeamBlueFrame_15 = PlayersFrame_15:FindFirstChild("TeamBlueFrame");
+    end)
+    local GetChildren_29 = TeamRedFrame_15.GetChildren;
+    local Children_50 = TeamRedFrame_15:GetChildren();
+    for i_71, v_71 in ipairs(Children_50) do
+        local IsA_73 = v_71.IsA;
+        local Frame_29 = v_71:IsA("Frame");
+        local Name_43 = v_71.Name;
+        local Array_90 = {};
+        local var100 = table.insert(Array_90, Name_43);
+    end
+    local GetChildren_30 = TeamBlueFrame_15.GetChildren;
+    local Children_51 = TeamBlueFrame_15:GetChildren();
+    for i_72, v_72 in ipairs(Children_51) do
+        local IsA_74 = v_72.IsA;
+        local Frame_30 = v_72:IsA("Frame");
+        local Name_44 = v_72.Name;
+        local Array_91 = {};
+        local var101 = table.insert(Array_91, Name_44);
+    end
+    local Name_45 = LocalPlayer.Name;
+    local Character_36 = LocalPlayer.Character;
+    local IsDescendantOf_57 = Character_36:IsDescendantOf(workspace);
+    local HumanoidRootPart_15 = Character_36:FindFirstChild("HumanoidRootPart");
+end);
+local CreateTab_2 = Window.CreateTab;
+local Hitbox = Window:CreateTab("Hitbox");
+local CreateToggle_3 = Hitbox.CreateToggle;
+local Toggle_3 = Hitbox:CreateToggle({
+    CurrentValue = false,
+    Name = "Enable Hitbox",
+    Callback = function(p1_0)
+    end,
+});
+local CreateSlider = Hitbox.CreateSlider;
+local Slider = Hitbox:CreateSlider({
+    Name = "Hitbox Transparency",
+    Suffix = "",
+    CurrentValue = 0.7,
+    Increment = 0.1,
+    Range = {
+        0,
+        1,
+    },
+    Callback = function(p1_0, p2_0, p3_0, p4_0, p5_0, p6_0)
+    end,
+});
+local CreateInput_2 = Hitbox.CreateInput;
+local Input_2 = Hitbox:CreateInput({
+    Callback = function(p1_0, p2_0, p3_0, p4_0, p5_0)
+        local var105 = tonumber(p1_0, nil);
+    end,
+    PlaceholderText = "Enter size (1-30)",
+    Name = "Hitbox Size (Max 30)",
+    RemoveTextAfterFocusLost = false,
+});
+local Connection;
+Connection = RunService.RenderStepped:Connect(function(DeltaTime, p2_0, p3_0) -- args: DeltaTime_2;
+    local Players_2 = Players:GetPlayers();
+    for i_73, v_73 in ipairs(Players_2) do
+        local Character_37 = v_73.Character;
+        local Success_65, Error_Message_65 = pcall(function(...)
+            local Character_38 = v_73.Character;
+            local FindFirstChild_141 = Character_38.FindFirstChild;
+            local HumanoidRootPart_16 = Character_38:FindFirstChild("HumanoidRootPart");
+            local Size = HumanoidRootPart_16.Size;
+            local Transparency = HumanoidRootPart_16.Transparency;
+            local Material = HumanoidRootPart_16.Material;
+            local CanCollide = HumanoidRootPart_16.CanCollide;
+            local BrickColor = HumanoidRootPart_16.BrickColor;
+            local Vector3_New = Vector3.new;
+            local Vector3_Value = Vector3_New(1, 1, 1);
+            HumanoidRootPart_16.Size = Vector3.new(1, 1, 1);
+            HumanoidRootPart_16.Transparency = p1_0;
+            local BrickColor_New = BrickColor.new;
+            local BrickColor_Value = BrickColor_New("Bright orange");
+            HumanoidRootPart_16.BrickColor = Bright orange;
+            local Enum_Material = Enum.Material;
+            local Neon = Enum_Material.Neon;
+            HumanoidRootPart_16.Material = Enum.Material.Neon;
+            HumanoidRootPart_16.CanCollide = false;
+        end)
+    end
+end);
+local Connection_2;
+Connection_2 = Players.PlayerAdded:Connect(function(Player, p2_0, p3_0) -- args: Player_2;
+    local CharacterAdded = Player.CharacterAdded;
+    local Connect_4 = CharacterAdded.Connect;
+    local Connected_4 = CharacterAdded:Connect(function(p1_0, p2_0, p3_0)
+        local Waited_For_22 = task.wait(0.1);
+        local Players_3 = Players:GetPlayers();
+        for i_74, v_74 in ipairs(Players_3) do
+            local Character_39 = v_74.Character;
+            local Success_66, Error_Message_66 = pcall(function(...)
+                local Character_40 = v_74.Character;
+                local FindFirstChild_142 = Character_40.FindFirstChild;
+                local HumanoidRootPart_17 = Character_40:FindFirstChild("HumanoidRootPart");
+                local Size_2 = HumanoidRootPart_17.Size;
+                local Transparency_2 = HumanoidRootPart_17.Transparency;
+                local Material_2 = HumanoidRootPart_17.Material;
+                local CanCollide_2 = HumanoidRootPart_17.CanCollide;
+                local BrickColor_2 = HumanoidRootPart_17.BrickColor;
+                local Vector3_Value_2 = Vector3_New(1, 1, 1);
+                HumanoidRootPart_17.Size = Vector3.new(1, 1, 1);
+                HumanoidRootPart_17.Transparency = p1_0;
+                local BrickColor_Value_2 = BrickColor_New("Bright orange");
+                HumanoidRootPart_17.BrickColor = Bright orange;
+                local Neon_2 = Enum_Material.Neon;
+                HumanoidRootPart_17.Material = Enum.Material.Neon;
+                HumanoidRootPart_17.CanCollide = false;
+            end)
+        end
+    end);
+end);
+local CreateTab_3 = Window.CreateTab;
+local ESP = Window:CreateTab("ESP");
+local CreateToggle_4 = ESP.CreateToggle;
+local Toggle_4 = ESP:CreateToggle({
+    CurrentValue = false,
+    Name = "Enable ESP",
+    Callback = function(p1_0, p2_0)
+        local Players_4 = Players:GetPlayers();
+        for i_75, v_75 in ipairs(Players_4) do
+            local Character_41 = v_75.Character;
+            local FindFirstChild_143 = Character_41.FindFirstChild;
+            local HumanoidRootPart_18 = Character_41:FindFirstChild("HumanoidRootPart");
+            local Highlight = Instance.new("Highlight");
+            local Enum_HighlightDepthMode = Enum.HighlightDepthMode;
+            local AlwaysOnTop = Enum_HighlightDepthMode.AlwaysOnTop;
+            Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+            Highlight.FillTransparency = 0.5;
+            Highlight.OutlineTransparency = 0;
+            local Color3_FromRGB = Color3.fromRGB;
+            local Color3_Value = Color3_FromRGB(255, 255, 255);
+            Highlight.OutlineColor = Color3.fromRGB(255, 255, 255);
+            local Color3_Value_2 = Color3_FromRGB(255, 0, 0);
+            Highlight.FillColor = Color3.fromRGB(255, 0, 0);
+            Highlight.Parent = Character_41;
+            Highlight.Adornee = Character_41;
+        end
+        local Name_46 = v_75.Name;
+        local FindFirstChild_144 = Players:FindFirstChild(Name_46);
+    end,
+});
+local Connection_3;
+Connection_3 = RunService.Heartbeat:Connect(function(DeltaTime_3, p2_0, p3_0, p4_0, p5_0) -- args: DeltaTime_4;
+    local Players_5 = Players:GetPlayers();
+    for i_76, v_76 in ipairs(Players_5) do
+        local Character_42 = v_76.Character;
+        local FindFirstChild_145 = Character_42.FindFirstChild;
+        local HumanoidRootPart_19 = Character_42:FindFirstChild("HumanoidRootPart");
+        local Highlight_2 = Instance.new("Highlight");
+        local AlwaysOnTop_2 = Enum_HighlightDepthMode.AlwaysOnTop;
+        Highlight_2.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+        Highlight_2.FillTransparency = 0.5;
+        Highlight_2.OutlineTransparency = 0;
+        local Color3_Value_3 = Color3_FromRGB(255, 255, 255);
+        Highlight_2.OutlineColor = Color3.fromRGB(255, 255, 255);
+        local Color3_Value_4 = Color3_FromRGB(255, 0, 0);
+        Highlight_2.FillColor = Color3.fromRGB(255, 0, 0);
+        Highlight_2.Parent = Character_42;
+        Highlight_2.Adornee = Character_42;
+    end
+    local Name_47 = v_75.Name;
+    local FindFirstChild_146 = Players:FindFirstChild(Name_47);
+    local Name_48 = v_76.Name;
+    local FindFirstChild_147 = Players:FindFirstChild(Name_48);
+end);
+local Connection_4;
+Connection_4 = Players.PlayerAdded:connect(function(Player_3, p2_0, p3_0) -- args: Player_4;
+    local Waited_For_23 = task.wait(0.2);
+    local Players_6 = Players:GetPlayers();
+    for i_77, v_77 in ipairs(Players_6) do
+        local Character_43 = v_77.Character;
+        local FindFirstChild_148 = Character_43.FindFirstChild;
+        local HumanoidRootPart_20 = Character_43:FindFirstChild("HumanoidRootPart");
+        local Highlight_3 = Instance.new("Highlight");
+        local AlwaysOnTop_3 = Enum_HighlightDepthMode.AlwaysOnTop;
+        Highlight_3.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+        Highlight_3.FillTransparency = 0.5;
+        Highlight_3.OutlineTransparency = 0;
+        local Color3_Value_5 = Color3_FromRGB(255, 255, 255);
+        Highlight_3.OutlineColor = Color3.fromRGB(255, 255, 255);
+        local Color3_Value_6 = Color3_FromRGB(255, 0, 0);
+        Highlight_3.FillColor = Color3.fromRGB(255, 0, 0);
+        Highlight_3.Parent = Character_43;
+        Highlight_3.Adornee = Character_43;
+    end
+    local Name_49 = v_77.Name;
+    local FindFirstChild_149 = Players:FindFirstChild(Name_49);
+    local Name_50 = v_76.Name;
+    local FindFirstChild_150 = Players:FindFirstChild(Name_50);
+    local Name_51 = v_75.Name;
+    local FindFirstChild_151 = Players:FindFirstChild(Name_51);
+    local CharacterAdded_2 = Player_3.CharacterAdded;
+    local Connect_5 = CharacterAdded_2.Connect;
+    local Connected_5 = CharacterAdded_2:Connect(function(p1_0, p2_0, p3_0, p4_0, p5_0)
+        local Waited_For_24 = task.wait(0.2);
+        local Players_7 = Players:GetPlayers();
+        for i_78, v_78 in ipairs(Players_7) do
+            local Character_44 = v_78.Character;
+            local FindFirstChild_152 = Character_44.FindFirstChild;
+            local HumanoidRootPart_21 = Character_44:FindFirstChild("HumanoidRootPart");
+            local Highlight_4 = Instance.new("Highlight");
+            local AlwaysOnTop_4 = Enum_HighlightDepthMode.AlwaysOnTop;
+            Highlight_4.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+            Highlight_4.FillTransparency = 0.5;
+            Highlight_4.OutlineTransparency = 0;
+            local Color3_Value_7 = Color3_FromRGB(255, 255, 255);
+            Highlight_4.OutlineColor = Color3.fromRGB(255, 255, 255);
+            local Color3_Value_8 = Color3_FromRGB(255, 0, 0);
+            Highlight_4.FillColor = Color3.fromRGB(255, 0, 0);
+            Highlight_4.Parent = Character_44;
+            Highlight_4.Adornee = Character_44;
+        end
+        local Name_52 = v_77.Name;
+        local FindFirstChild_153 = Players:FindFirstChild(Name_52);
+        local Name_53 = v_76.Name;
+        local FindFirstChild_154 = Players:FindFirstChild(Name_53);
+        local Name_54 = v_75.Name;
+        local FindFirstChild_155 = Players:FindFirstChild(Name_54);
+        local Name_55 = v_78.Name;
+        local FindFirstChild_156 = Players:FindFirstChild(Name_55);
+    end);
+end);
+local Connection_5;
+Connection_5 = Players.PlayerRemoving:Connect(function(Player_5, p2_0, p3_0, p4_0, p5_0) -- args: Player_6;
+end);
+local Connection_6;
+Connection_6 = LocalPlayer.CharacterAdded:Connect(function(Character_45) -- args: Character_46;
+    local Waited_For_25 = task.wait(0.2);
+    local Players_8 = Players:GetPlayers();
+    for i_79, v_79 in ipairs(Players_8) do
+        local Character_47 = v_79.Character;
+        local FindFirstChild_157 = Character_47.FindFirstChild;
+        local HumanoidRootPart_22 = Character_47:FindFirstChild("HumanoidRootPart");
+        local Highlight_5 = Instance.new("Highlight");
+        local AlwaysOnTop_5 = Enum_HighlightDepthMode.AlwaysOnTop;
+        Highlight_5.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+        Highlight_5.FillTransparency = 0.5;
+        Highlight_5.OutlineTransparency = 0;
+        local Color3_Value_9 = Color3_FromRGB(255, 255, 255);
+        Highlight_5.OutlineColor = Color3.fromRGB(255, 255, 255);
+        local Color3_Value_10 = Color3_FromRGB(255, 0, 0);
+        Highlight_5.FillColor = Color3.fromRGB(255, 0, 0);
+        Highlight_5.Parent = Character_47;
+        Highlight_5.Adornee = Character_47;
+    end
+    local Name_56 = v_76.Name;
+    local FindFirstChild_158 = Players:FindFirstChild(Name_56);
+    local Name_57 = v_78.Name;
+    local FindFirstChild_159 = Players:FindFirstChild(Name_57);
+    local Name_58 = v_77.Name;
+    local FindFirstChild_160 = Players:FindFirstChild(Name_58);
+    local Name_59 = v_79.Name;
+    local FindFirstChild_161 = Players:FindFirstChild(Name_59);
+    local Name_60 = v_75.Name;
+    local FindFirstChild_162 = Players:FindFirstChild(Name_60);
+end);
+local CreateTab_4 = Window.CreateTab;
+local Boxes = Window:CreateTab("Boxes");
+local CreateDropdown = Boxes.CreateDropdown;
+local Dropdown = Boxes:CreateDropdown({
+    CurrentValue = "Gun Box #1",
+    Callback = function(p1_0, p2_0, p3_0, p4_0)
+    end,
+    Name = "Select Box",
+    Options = {
+        "Gun Box #1",
+        "Gun Box #2",
+        "Knife Box #1",
+        "Knife Box #2",
+        "Mythic Box #1",
+        "Mythic Box #2",
+        "Mythic Box #3",
+        "Mythic Box #4",
+    },
+});
+local CreateToggle_5 = Boxes.CreateToggle;
+local Toggle_5 = Boxes:CreateToggle({
+    CurrentValue = false,
+    Name = "Auto Buy Box",
+    Callback = function(p1_0)
+        local Connection_7;
+        Connection_7 = RunService.Heartbeat:connect(function(DeltaTime_5, p2_0, p3_0) -- args: DeltaTime_6;
+            local Success_67, Error_Message_67 = pcall(function(...)
+                local BuyCase = ReplicatedStorage:WaitForChild("BuyCase");
+                local InvokeServer = BuyCase.InvokeServer;
+                local InvokeServer_2 = BuyCase:InvokeServer(p1_0);
+            end)
+        end);
+    end,
+});
+local CreateTab_5 = Window.CreateTab;
+local Trade_Spam = Window:CreateTab("Trade Spam");
+local Players_9 = Players:GetPlayers();
+for i_80, v_80 in ipairs(Players_9) do
+    local Name_61 = v_80.Name;
+    local Array_92 = {};
+    local var101 = table.insert(Array_92, Name_61);
+end
+local CreateDropdown_2 = Trade_Spam.CreateDropdown;
+local Dropdown_2 = Trade_Spam:CreateDropdown({
+    Name = "Select Player",
+    CurrentValue = "",
+    Flag = "TradePlayerDropdown",
+    Callback = function(p1_0, p2_0, p3_0, p4_0, p5_0)
+    end,
+    Options = Array_92,
+});
+local Connection_8;
+Connection_8 = Players.PlayerAdded:connect(function(Player_7, p2_0, p3_0, p4_0, p5_0) -- args: Player_8;
+    local Flags = Loaded_Var1.Flags;
+    local TradePlayerDropdown = Flags.TradePlayerDropdown;
+    local Players_10 = Players:GetPlayers();
+    for i_81, v_81 in ipairs(Players_10) do
+        local Name_62 = v_81.Name;
+        local Array_93 = {};
+        local var102 = table.insert(Array_93, Name_62);
+    end
+    local SetOptions = TradePlayerDropdown.SetOptions;
+    local SetOptions_2 = TradePlayerDropdown:SetOptions(Array_93);
+end);
+local Connection_9;
+Connection_9 = Players.PlayerRemoving:connect(function(Player_9, p2_0) -- args: Player_10;
+    local Flags_2 = Loaded_Var1.Flags;
+    local TradePlayerDropdown_2 = Flags_2.TradePlayerDropdown;
+    local SetOptions_3 = TradePlayerDropdown_2.SetOptions;
+    local Players_11 = Players:GetPlayers();
+    for i_82, v_82 in ipairs(Players_11) do
+        local Name_63 = v_82.Name;
+        local Array_94 = {};
+        local var103 = table.insert(Array_94, Name_63);
+    end
+    local SetOptions_4 = TradePlayerDropdown_2:SetOptions(Array_94);
+end);
+local CreateToggle_6 = Trade_Spam.CreateToggle;
+local Toggle_6 = Trade_Spam:CreateToggle({
+    CurrentValue = false,
+    Name = "Trade Spam",
+    Callback = function(p1_0, p2_0, p3_0)
+        local FindFirstChild_163 = Players:FindFirstChild(p1_0);
+        local Connection_10;
+        Connection_10 = RunService.Heartbeat:connect(function(DeltaTime_7, p2_0, p3_0) -- args: DeltaTime_8;
+            local Success_68, Error_Message_68 = pcall(function(...)
+                local Trade = ReplicatedStorage:WaitForChild("Trade");
+                local FireServer = Trade.FireServer;
+                local SENT = Trade:FireServer("SENT", FindFirstChild_163);
+            end)
+        end);
+    end,
+});
+local CreateTab_6 = Window.CreateTab;
+local Codes = Window:CreateTab("Codes");
+local CreateButton = Codes.CreateButton;
+local Button = Codes:CreateButton({
+    Name = "Redeem All Codes",
+    Callback = function(p1_0, p2_0, p3_0, p4_0, p5_0)
+        local Success_69, Error_Message_69 = pcall(function(...)
+            local Code = ReplicatedStorage:WaitForChild("Code");
+            local InvokeServer_3 = Code.InvokeServer;
+            local HOTEL = Code:InvokeServer("HOTEL", "FlareGun", "Skin", "Currency");
+            local Waited_For_26 = task.wait(1);
+            local Code_2 = ReplicatedStorage:WaitForChild("Code");
+            local InvokeServer_4 = Code_2.InvokeServer;
+            local GAME = Code_2:InvokeServer("GAME", "2500", "Cash", "Currency");
+            local Waited_For_27 = task.wait(1);
+            local Code_3 = ReplicatedStorage:WaitForChild("Code");
+            local InvokeServer_5 = Code_3.InvokeServer;
+            local BACK = Code_3:InvokeServer("BACK", "5000", "Cash", "Currency");
+            local Waited_For_28 = task.wait(1);
+            local Code_4 = ReplicatedStorage:WaitForChild("Code");
+            local InvokeServer_6 = Code_4.InvokeServer;
+            local FREE = Code_4:InvokeServer("FREE", "SeaSword", "Skin", "Currency");
+            local Waited_For_29 = task.wait(1);
+            local Notify = Loaded_Var1.Notify;
+            local Notify_2 = Loaded_Var1:Notify({
+                Duration = 5,
+                Title = "Codes Redeemed",
+                Content = "All codes have been redeemed!",
+            });
+        end)
+    end,
+});
+local CreateTab_7 = Window.CreateTab;
+local Misc = Window:CreateTab("Misc");
+local CreateButton_2 = Misc.CreateButton;
+local Button_2 = Misc:CreateButton({
+    Name = "Rejoin Server",
+    Callback = function(p1_0)
+        local PlaceId = game.PlaceId;
+        local Teleport = TeleportService:Teleport(90951092838, LocalPlayer);
+    end,
+});
+local Notify_3 = Loaded_Var1.Notify;
+local Notify_4 = Loaded_Var1:Notify({
+    Duration = 8,
+    Title = "Laith Scripts Loaded",
+    Content = "Murders Vs Sheriffs Script - By: Laith Scripts",
+});
